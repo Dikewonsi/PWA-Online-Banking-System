@@ -60,6 +60,13 @@
                             </li>
 
                             <li>
+                                <a href="update_user_balance.php">
+                                    <i class="dripicons-home"></i>
+                                    <span data-key="t-dashboard">Update User Balance</span>
+                                </a>
+                            </li>
+
+                            <li>
                                 <a href="view_transactions.php">
                                     <i class="dripicons-home"></i>
                                     <span data-key="t-dashboard">View Transactions</span>

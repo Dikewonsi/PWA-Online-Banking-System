@@ -28,32 +28,7 @@
         // Redirect to a success page or display a success message
         header("Location: edit_users.php?success=1");
         exit;
-    }
-    else if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_user_trades_per_day']))
-    {
-        $userid = htmlspecialchars($_POST['userid']);
-        $trades_per_day = htmlspecialchars($_POST['trades_per_day']);
-
-        try {
-            // Set PDO error mode to exception
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            // Prepare SQL statement to update admin details
-            $sql = "UPDATE users SET trades_per_day = :trades_per_day WHERE userid = :userid";
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindParam(':trades_per_day', $trades_per_day);
-            $stmt->bindParam(':userid', $userid);
-            $stmt->execute();
-
-            // Redirect to profile page or provide success message
-            header("Location: edit_trades_per_day.php?success=1");
-            exit();
-        } catch (PDOException $e) {
-            // Handle database connection errors
-            header("Location: edit_trades_per_day.php?error=1");
-            exit; // Make sure to exit after redirection
-        }                
-    }
+    }    
     else if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_user'])) 
     {
         // Sanitize and validate form input data (you can add more validation as needed)
@@ -162,29 +137,24 @@
             exit; // Make sure to exit after redirection
         }
     }
-    else if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_asset']))
+    else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_user_balance']))
     {
         // Sanitize and validate form input data (you can add more validation as needed)
-        $asset_id = htmlspecialchars($_POST['asset_id']);
+        $account_id = $_POST['account_id']; // Selected account ID
+        $new_balance = $_POST['new_balance']; // New balance
 
-        // Prepare and execute SQL query to delete user based on the provided ID
-        $sql = "DELETE FROM assets WHERE id = :asset_id";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute(['asset_id' => $asset_id]);
+        // Prepare the SQL statement to update the balance
+        $stmt = $pdo->prepare("UPDATE accounts SET balance = :new_balance WHERE account_id = :account_id");
+        $stmt->bindParam(':new_balance', $new_balance, PDO::PARAM_STR);
+        $stmt->bindParam(':account_id', $account_id, PDO::PARAM_INT);
 
-        // Check if user was deleted successfully
-        $delete_successful = $stmt->rowCount() > 0;
+        // Execute the statement
+        $stmt->execute();
 
-        if ($delete_successful) {
-            // Redirect to the success page with success query parameter
-            header("Location: delete_assets.php?success=1");
-            exit; // Make sure to exit after redirection
-        } else {
-            // Redirect to the error page with error query parameter
-            header("Location: delete_assets.php?error=1");
-            exit; // Make sure to exit after redirection
-        }
-    }
+        // Redirect to a success page or display a success message
+        header("Location: update_user_balance.php?success=1");
+        exit;
+    } 
 
 
     // Function to get the username of the admin who is creating the profile
