@@ -29,17 +29,17 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="mpay" />
-  <meta name="keywords" content="mpay" />
-  <meta name="author" content="mpay" />
+  <meta name="description" content="Capital Vista" />
+  <meta name="keywords" content="Capital Vista" />
+  <meta name="author" content="Capital Vista" />
   <link rel="manifest" href="./manifest.json" />
   <link rel="icon" href="assets/images/logo/favicon.png" type="image/x-icon" />
-  <title>mPay App</title>
+  <title>Capital Vista App</title>
   <link rel="apple-touch-icon" href="assets/images/logo/favicon.png" />
   <meta name="theme-color" content="#122636" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  <meta name="apple-mobile-web-app-title" content="mpay" />
+  <meta name="apple-mobile-web-app-title" content="Capital Vista" />
   <meta name="msapplication-TileImage" content="assets/images/logo/favicon.png" />
   <meta name="msapplication-TileColor" content="#FFFFFF" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -170,14 +170,7 @@
                         <h3 class="fw-normal dark-text">Date</h3>
                         <h3 class="fw-normal light-text" id="transaction-date"></h3>
                     </li>
-                    <li>
-                        <h3 class="fw-normal dark-text">From</h3>
-                        <h3 class="fw-normal light-text" id="from"></h3>
-                    </li>
-                    <li>
-                        <h3 class="fw-normal dark-text">To</h3>
-                        <h3 class="fw-normal light-text" id="to"></h3>
-                    </li>
+                    
                     <li>
                         <h3 class="fw-normal dark-text">Transaction Description</h3>
                         <h3 class="fw-normal light-text" id="transaction-category"></h3>
@@ -212,8 +205,7 @@
         const transactionLinks = document.querySelectorAll('.transaction-link');
         const modalPaymentStatus = document.getElementById('payment-status');
         const modalTransactionDate = document.getElementById('transaction-date');
-        const modalFrom = document.getElementById('from');
-        const modalTo = document.getElementById('to');
+        
         const modalTransactionCategory = document.getElementById('transaction-category');
         const modalAmount = document.getElementById('amount');
 
@@ -224,16 +216,14 @@
                 // Fetch data attributes
                 const paymentStatus = this.getAttribute('data-payment-status');
                 const transactionDate = this.getAttribute('data-transaction-date');
-                const from = this.getAttribute('data-from');
-                const to = this.getAttribute('data-to');
+                
                 const transactionCategory = this.getAttribute('data-transaction-category');
                 const amount = this.getAttribute('data-amount');
 
                 // Update modal content
                 modalPaymentStatus.textContent = paymentStatus;
                 modalTransactionDate.textContent = transactionDate;
-                modalFrom.textContent = from;
-                modalTo.textContent = to;
+                
                 modalTransactionCategory.textContent = transactionCategory;
                 modalAmount.textContent = '$' + amount;
             });

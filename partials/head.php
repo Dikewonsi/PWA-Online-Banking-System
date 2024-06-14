@@ -21,7 +21,7 @@
     <meta name="msapplication-navbutton-color" content="#1A4137">
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#1A4137">
-    <title>Capitial Visa</title>
+    <title>Capitial Vista</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="56x56" href="images/logo/logo2222.png">
     <!-- Bootstrap CSS -->

@@ -71,7 +71,7 @@
 <body class="auth-body">
   <!-- header starts -->
   <div class="auth-header">
-    <a href="index.php"> <i class="back-btn" data-feather="arrow-left"></i> </a>
+    <a href="../index.php"> <i class="back-btn" data-feather="arrow-left"></i> </a>
 
     <img class="img-fluid img" src="assets/images/authentication/1.svg" alt="v1" />
 

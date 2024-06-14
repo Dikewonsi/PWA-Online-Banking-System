@@ -1,12 +1,12 @@
 {
-    "name": "mPay app",
-    "short_name": "mPay app",
+    "name": "Capital Vista app",
+    "short_name": "Capital Vista app",
     "lang": "en-US",
     "start_url": ".",
     "display": "standalone",
     "background_color": "white",
     "theme_color": "#622CFD",
-    "description": "mPay app",
+    "description": "Capital Vista app",
     "icons": [
         {
             "src": "assets/images/logo/favicon.png",

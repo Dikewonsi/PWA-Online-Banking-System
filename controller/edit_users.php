@@ -140,22 +140,10 @@
                                             <thead>
                                             <tr>
                                                 <th>User ID</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
+                                                <th>Full Name</th>
                                                 <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Country</th>
-                                                <th>Profile Photo</th>
-                                                <th>Account Balance</th>
-                                                <th>Referral Bonus</th>
-                                                <th>User Status: </th>
-                                                <th>Total Referred: </th>
-                                                <th>Email Status: </th>
-                                                <th>Residency Status: </th>
-                                                <th>ID Status: </th>
-                                                <th>Registered At: </th>
-                                                <th>Modified At: </th>
-                                                <th>Action: </th>
+                                                <th>Password</th>                                                                                              
+                                                <th>Created At</th>
                                             </tr>
                                             </thead>   
                                             <tbody>

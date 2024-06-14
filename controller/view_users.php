@@ -120,96 +120,20 @@
                                             <thead>
                                             <tr>
                                                 <th>User ID</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
+                                                <th>Full Name</th>
                                                 <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Country</th>
-                                                <th>Profile Photo</th>
-                                                <th>Account Balance</th>
-                                                <th>Referral Bonus</th>
-                                                <th>User Status: </th>
-                                                <th>Total Referred: </th>
-                                                <th>Email Status: </th>
-                                                <th>Residency Status: </th>
-                                                <th>ID Status: </th>
-                                                <th>Registered At: </th>
-                                                <th>Modified At: </th>                                                
+                                                <th>Password</th>                                                                                              
+                                                <th>Created At</th>
                                             </tr>
                                             </thead>   
                                             <tbody>
                                                 <?php foreach ($users as $user): ?>
                                                     <tr>
-                                                        <td><?= $user['userid'] ?></td>
-                                                        <td><?= $user['f_name'] ?></td>
-                                                        <td><?= $user['l_name'] ?></td>
+                                                        <td><?= $user['user_id'] ?></td>
+                                                        <td><?= $user['fullname'] ?></td>
                                                         <td><?= $user['email'] ?></td>
-                                                        <td><?= $user['phone'] ?></td>
-                                                        <td><?= $user['country'] ?></td>
-                                                        <td><?= $user['profile_photo'] ?></td>
-                                                        <td>$<?= number_format($user['acc_balance']) ?></td>
-                                                        <td>$<?= number_format($user['referral_bonus']) ?></td>
-                                                        <td>
-                                                            <?php
-                                                                $status = $user['user_status'];
-
-                                                                if($status == 0)
-                                                                {
-                                                                    echo '<span style="color:red">Not Active</span>';
-                                                                }
-                                                                else
-                                                                {
-                                                                    echo '<span style="color:green">Active</span>';
-                                                                }
-                                                            ?>
-                                                        </td>
-                                                        <td><?= $user['total_referred'] ?></td>
-                                                        <td>                                                            
-                                                            
-                                                            <?php
-                                                                $status = $user['user_status'];
-
-                                                                if($status = 'not_verified')
-                                                                {
-                                                                    echo '<span style="color:red">Not Verified</span>';
-                                                                }
-                                                                else
-                                                                {
-                                                                    echo '<span style="color:green">Verified</span>';
-                                                                }
-                                                            ?>
-
-                                                        </td>
-                                                        <td>
-                                                            <?php
-                                                                $status = $user['residency_status'];
-
-                                                                if($status = 'not_verified')
-                                                                {
-                                                                    echo '<span style="color:red">Not Verified</span>';
-                                                                }
-                                                                else
-                                                                {
-                                                                    echo '<span style="color:green">Verified</span>';
-                                                                }
-                                                            ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php
-                                                                $status = $user['id_status'];
-
-                                                                if($status = 'not_verified')
-                                                                {
-                                                                    echo '<span style="color:red">Not Verified</span>';
-                                                                }
-                                                                else
-                                                                {
-                                                                    echo '<span style="color:green">Verified</span>';
-                                                                }
-                                                            ?>
-                                                        </td>
-                                                        <td><?= $user['registered_at'] ?></td>
-                                                        <td><?= $user['modified_at'] ?></td>                                                        
+                                                        <td><?= $user['password'] ?></td>
+                                                        <td><?= $user['created_at'] ?></td>                                                        
                                                     </tr>
                                                 <?php endforeach; ?>
                                             </tbody>                                         

@@ -5,7 +5,7 @@
                 <div class="col-xl-4 col-md-3 footer-intro mb-30">
                     <div class="logo mb-15">
                         <a href="index.html" class="d-inline-block d-lg-none">
-                            <img src="images/logo/logo_01.svg" alt="">
+                            <img src="images/logo/logo-white.png" style="width:100px;" alt="">
                         </a>
                     </div>
                     <!-- logo -->

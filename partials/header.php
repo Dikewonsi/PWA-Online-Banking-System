@@ -5,22 +5,22 @@
 			==================================================== -->
         <div id="preloader">
             <div id="ctn-preloader" class="ctn-preloader">
-                <div class="icon"><img src="images/loader.svg" alt="" class="m-auto d-block" width="60"></div>
+                <div class="icon"><img src="images/logo22.png" alt="" class="m-auto d-block" width="60"></div>
                 <div class="txt-loading">
-                    <span data-text-preloader="B" class="letters-loading">
-                        B
+                    <span data-text-preloader="V" class="letters-loading">
+                        V
                     </span>
-                    <span data-text-preloader="a" class="letters-loading">
-                        a
+                    <span data-text-preloader="I" class="letters-loading">
+                        I
                     </span>
-                    <span data-text-preloader="b" class="letters-loading">
-                        b
+                    <span data-text-preloader="S" class="letters-loading">
+                        S
                     </span>
-                    <span data-text-preloader="u" class="letters-loading">
-                        u
+                    <span data-text-preloader="T" class="letters-loading">
+                        T
                     </span>
-                    <span data-text-preloader="n" class="letters-loading">
-                        n
+                    <span data-text-preloader="A" class="letters-loading">
+                        A
                     </span>
                 </div>
             </div>
@@ -38,13 +38,13 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="logo order-lg-0">
                             <a href="index.php" class="d-flex align-items-center">
-                                <img src="images/logo/logo222.png"style="background-color: white;" alt="">
+                                <img src="images/logo/logo-white.png" style="width:100px;" alt="">
                             </a>
                         </div>
                         <!-- logo -->
                         <div class="right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
                             <ul class="d-flex align-items-center style-none">
-                                <li class="d-none d-md-block"><a href="login.php" class="btn-one tran3s  text-white">Login</a></li>
+                                <li class="d-none d-md-block"><a href="app/signin.php" class="btn-one tran3s  text-white">Login</a></li>
                             </ul>
                         </div> <!--/.right-widget-->
                         <nav class="navbar navbar-expand-lg p0 order-lg-2">
@@ -54,7 +54,7 @@
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav align-items-lg-center">
                                     <li class="d-block d-lg-none">
-                                        <div class="logo"><a href="index.php" class="d-block"><img src="images/logo/logo222.png" alt="" style="background-color: white;"></a></div>
+                                        <div class="logo"><a href="index.php" class="d-block"><img src="images/logo/logo-white.png" style="width:100px;" alt=""></a></div>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Bank
@@ -110,7 +110,7 @@
                                         </ul>
                                     </li>
 
-                                    <li class="d-md-none ps-2 pe-2"><a href="login.php" class="btn-one w-100 mt-15  text-white tran3s">Login</a></li>
+                                    <li class="d-md-none ps-2 pe-2"><a href="app/signin.php" class="btn-one w-100 mt-15  text-white tran3s">Login</a></li>
                                 </ul>
                             </div>
                         </nav>

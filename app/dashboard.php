@@ -107,19 +107,19 @@
       <div class="sidebar-content">
         <ul class="link-section">
           <li>
-            <a href="landing.html" class="pages">
+            <a href="dashboard.php" class="pages">
               <img src="assets/images/icons/home.png" style="width:20px;" alt="">
               <h3>Home</h3>
             </a>
           </li>
           <li>
-            <a href="rewards.php" class="pages">
+            <a href="javascript:void(0);" class="pages">
               <img src="assets/images/icons/badge.png" style="width:20px;" alt="">
               <h3>Rewards</h3>
             </a>
           </li>
           <li>
-            <a href="finance.php" class="pages">
+            <a href="javascript:void(0);" class="pages">
               <img src="assets/images/icons/money.png" style="width:20px;" alt="">
               <h3>Finance</h3>
             </a>
@@ -132,7 +132,7 @@
           </li>
 
           <li>
-            <a href="profile.php" class="pages">
+            <a href="javascript:void(0);" class="pages">
             <img src="assets/images/icons/user.png" style="width:20px;" alt="">
               <h3>Profile</h3>
             </a>
@@ -169,7 +169,7 @@
         </a>
         <img class="img-fluid logo" src="assets/images/logo/logo.png" style="width:100px; height:50px;" alt="logo" />
 
-        <a href="notification.html" class="notification">
+        <a href="notification.php" class="notification">
           <i class="notification-icon" data-feather="bell"></i>
         </a>
       </div>
@@ -461,7 +461,7 @@
     <div class="custom-container">
       <div class="title">
         <h2>All Cards</h2>
-        <a href="cards.html">See all</a>
+        <a href="cards.php">See all</a>
       </div>
 
       <div class="swiper card-slider">
@@ -540,7 +540,7 @@
     <div class="custom-container">
       <div class="title">
         <h2>Bills Detail</h2>
-        <a href="bill.html">See all</a>
+        <a href="javascript:void(0);">See all</a>
       </div>
       <div class="row g-3">
         <div class="col-md-3 col-6">
@@ -621,7 +621,7 @@
     <div class="custom-container">
       <div class="title">
         <h2>My Saving Plans</h2>
-        <a href="saving-plans.html">See all</a>
+        <a href="javascript:void(0);">See all</a>
       </div>
       <div class="row">
         <div class="col-6">
@@ -689,17 +689,17 @@
   <div class="navbar-menu elements-navbar position-relative">
       <ul>
           <li class="active">
-              <a href="index.php">
+              <a href="dashboard.php">
                   <div class="icon">
-                      <img class="unactive" src="assets/images/icons/home.png" alt="mPay" />
-                      <img class="active" src="assets/images/icons/home.png" style="width:20px;" alt="mPay" />
+                      <img class="unactive" src="assets/images/icons/home.png" alt="Capital Vista" />
+                      <img class="active" src="assets/images/icons/home.png" style="width:20px;" alt="Capital Vista" />
                   </div>
                   <h5 class="active">Home</h5>
               </a>
           </li>
 
           <li>
-              <a href="rewards.php">
+              <a href="javascript:void(0);">
                   <div class="icon">
                       <img class="unactive" src="assets/images/svg/bitcoin.svg" alt="categories" />
                       <img class="active" src="assets/images/svg/bitcoin-fill.svg" alt="categories" />
@@ -709,7 +709,7 @@
           </li>
 
           <li>
-              <a href="finance.php">
+              <a href="javascript:void(0);">
                   <div class="icon">
                       <img class="unactive" src="assets/images/svg/bar-chart.svg" alt="bag" />
                       <img class="active" src="assets/images/svg/bar-chart-fill.svg" alt="bag" />
@@ -719,7 +719,7 @@
           </li>
 
           <li>
-              <a href="cards.php">
+              <a href="javascript:void(0);">
                   <div class="icon">
                       <img class="unactive" src="assets/images/svg/user.svg" alt="profile" />
                       <img class="active" src="assets/images/svg/user-fill.svg" alt="profile" />
@@ -729,7 +729,7 @@
           </li>
 
           <li>
-              <a href="profile.php">
+              <a href="javascript:void(0);">
                   <div class="icon">
                       <img class="unactive" src="assets/images/svg/user.svg" alt="profile" />
                       <img class="active" src="assets/images/svg/user-fill.svg" alt="profile" />
@@ -742,7 +742,7 @@
   <!-- bottom navbar end -->
 
   <!-- add money modal start -->
-  <div class="modal add-money-modal fade" id="add-money" tabindex="-1">
+  <!-- <div class="modal add-money-modal fade" id="add-money" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -772,11 +772,11 @@
         </button>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- add money modal end -->
 
   <!-- pay modal starts -->
-  <div class="modal pay-modal fade" id="pay" tabindex="-1">
+  <!-- <div class="modal pay-modal fade" id="pay" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -816,11 +816,11 @@
         </button>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- pay modal end -->
 
   <!-- paid modal starts -->
-  <div class="modal pay-modal fade" id="paid" tabindex="-1">
+  <!-- <div class="modal pay-modal fade" id="paid" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -860,7 +860,7 @@
         </button>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- paid modal end -->
 
   <!-- pwa install app popup start -->
