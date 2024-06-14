@@ -8,12 +8,12 @@
 
     // Check if user ID is provided in the URL
     if (isset($_GET['id'])) {
-        $userid = $_GET['id'];
+        $user_id = $_GET['id'];
 
         // Prepare and execute SQL query to fetch user data based on the provided ID
-        $sql = "SELECT * FROM users WHERE userid = :userid";
+        $sql = "SELECT * FROM users WHERE user_id = :user_id";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute(['userid' => $userid]);
+        $stmt->execute(['user_id' => $user_id]);
         
         // Fetch user data
         $userData = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -91,7 +91,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0 font-size-18">Edit User - USERID = <?= $userData['userid'];?></h4>
+                                    <h4 class="mb-sm-0 font-size-18">Edit User - USERID = <?= $userData['user_id'];?></h4>
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
@@ -110,7 +110,7 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <h4 class="card-title">User Information</h4>
-                                        <p class="card-title-desc">This form contains user Information for <strong><?= $userData['f_name'].' ' . $userData['l_name']; ?></strong>, be careful how you proceed.</p>
+                                        <p class="card-title-desc">This form contains user Information for <strong><?= $userData['fullname']; ?></strong>, be careful how you proceed.</p>
                                     </div>
                                     <!-- end card header -->
 
@@ -118,57 +118,33 @@
                                         <div>
                                             <h5 class="card-title mb-4">Personal Information</h5>
                                             <form action="codes.php" method="POST">
-                                                <input type="hidden" name="userid" value="<?= $userData['userid']; ?>"/>
+                                                <input type="hidden" name="userid" value="<?= $userData['user_id']; ?>"/>
                                                 <div class="row">
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>First Name</label>
-                                                            <input type="text" name="f_name" required data-pristine-required-message="Please Enter a name" class="form-control" value="<?= $userData['f_name'];?>" />
+                                                            <input type="text" name="fullname" required data-pristine-required-message="Please Enter a name" class="form-control" value="<?= $userData['fullname'];?>" />
+                                                        </div>
+                                                    </div>                                                    
+                                                    <div class="col-xl-4 col-md-6">
+                                                        <div class="form-group mb-3">
+                                                            <label>Email Address</label>
+                                                            <input type="text" name="email" required data-pristine-required-message="Please Enter an amount" class="form-control" value="<?= $userData['email'];?>" />
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
-                                                            <label>Last Name</label>
-                                                            <input type="text" name="l_name" required data-pristine-required-message="Please Enter a name" class="form-control" value="<?= $userData['l_name'];?>" />
+                                                            <label>Password</label>
+                                                            <input type="text" name="password" required data-pristine-required-message="Please Enter a Password" class="form-control" value="<?= $userData['password'];?>" />
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
-                                                            <label>Email</label>
-                                                            <input type="email" name="email" required data-pristine-required-message="Please Enter a Email" class="form-control" value="<?= $userData['email']; ?>" />
+                                                            <label>Created at</label>
+                                                            <input type="text" name="created_at" required data-pristine-required-message="Please Enter an amount" class="form-control" value="<?= $userData['created_at'];?>" />
                                                         </div>
                                                     </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Phone Number</label>
-                                                            <input type="text" name="phone" required data-pristine-required-message="Please Enter a phone number" class="form-control" value="<?= $userData['phone'];?>" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Country</label>
-                                                            <input type="text" name="country" required data-pristine-required-message="Please Enter a Country" class="form-control" value="<?= $userData['country'];?>" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Account Balance</label>
-                                                            <input type="number" name="acc_balance" required data-pristine-required-message="Please Enter an Amount" class="form-control" value="<?= $userData['acc_balance'];?>" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Referral Bonus</label>
-                                                            <input type="text" name="referral_bonus" required data-pristine-required-message="Please Enter an amount" class="form-control" value="<?= $userData['referral_bonus'];?>" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Total Referred</label>
-                                                            <input type="text" name="total_referred" required data-pristine-required-message="Please Enter an amount" class="form-control" value="<?= $userData['total_referred'];?>" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
+                                                    <!-- <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>Email Status</label>
                                                             <select class="form-control form-select" name="email_status">
@@ -178,41 +154,7 @@
                                                                 <option value="pending">Pending</option>
                                                             </select>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Residency Status</label>
-                                                            <select class="form-control form-select" name="residency_status">
-                                                                <option value="<?= $userData['residency_status']; ?>">Selected - <?= $userData['residency_status'];?></option>
-                                                                <option value="not_verified">Not Verified</option>
-                                                                <option value="verified">Verified</option>
-                                                                <option value="pending">Pending</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>ID Status</label>
-                                                            <select class="form-control form-select" name="id_status">
-                                                                <option value="<?= $userData['id_status']; ?>">Selected - <?= $userData['id_status'];?></option>
-                                                                <option value="not_verified">Not Verified</option>
-                                                                <option value="verified">Verified</option>
-                                                                <option value="pending">Pending</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Registered At</label>
-                                                            <input class="form-control" name="registered_at" type="datetime-local" value="<?= $userData['registered_at']; ?>" id="example-datetime-local-input">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Modified At</label>
-                                                            <input class="form-control" name="modified_at" type="datetime-local" value="<?= $userData['modified_at']; ?>" id="example-datetime-local-input">
-                                                        </div>
-                                                    </div>                                                    
+                                                    </div> -->                                                                                                        
                                                 </div>
                                                 <!-- end row -->
                                                 <div class="form-group">

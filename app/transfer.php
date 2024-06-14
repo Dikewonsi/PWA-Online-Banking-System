@@ -73,7 +73,7 @@
       <ul class="nav nav-tabs custom-selectjs tab-style1" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="bank-tab" data-bs-toggle="tab" data-bs-target="#bank" type="button"
-            role="tab">To CapitalVista</button>
+            role="tab">Send Money</button>
         </li>        
       </ul>
 

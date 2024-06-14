@@ -144,41 +144,19 @@
                                                 <th>Email</th>
                                                 <th>Password</th>                                                                                              
                                                 <th>Created At</th>
+                                                <th>Action</th>
                                             </tr>
                                             </thead>   
                                             <tbody>
                                                 <?php foreach ($users as $user): ?>
                                                     <tr>
-                                                        <td><?= $user['userid'] ?></td>
-                                                        <td><?= $user['f_name'] ?></td>
-                                                        <td><?= $user['l_name'] ?></td>
+                                                        <td><?= $user['user_id'] ?></td>
+                                                        <td><?= $user['fullname'] ?></td>
                                                         <td><?= $user['email'] ?></td>
-                                                        <td><?= $user['phone'] ?></td>
-                                                        <td><?= $user['country'] ?></td>
-                                                        <td><?= $user['profile_photo'] ?></td>
-                                                        <td>$<?= number_format($user['acc_balance']) ?></td>
-                                                        <td>$<?= number_format($user['referral_bonus']) ?></td>
-                                                        <td><?php
-                                                                $status = $user['user_status'];
-
-                                                                if($status == 0)
-                                                                {
-                                                                    echo '<span style="color:red">Not Active</span>';
-                                                                }
-                                                                else
-                                                                {
-                                                                    echo '<span style="color:green">Active</span>';
-                                                                }
-                                                            ?>
-                                                        </td>
-                                                        <td><?= $user['total_referred'] ?></td>
-                                                        <td><?= $user['email_status'] ?></td>
-                                                        <td><?= $user['residency_status'] ?></td>
-                                                        <td><?= $user['id_status'] ?></td>
-                                                        <td><?= $user['registered_at'] ?></td>
-                                                        <td><?= $user['modified_at'] ?></td>
+                                                        <td><?= $user['password'] ?></td>
+                                                        <td><?= $user['created_at'] ?></td> 
                                                         <td>
-                                                            <a class="btn btn-primary btn-sm edit" href="edit_user.php?id=<?= $user['userid']; ?>">
+                                                            <a class="btn btn-primary btn-sm edit" href="edit_user.php?id=<?= $user['user_id']; ?>">
                                                                 <i class="fas fa-pencil-alt">  EDIT</i>
                                                             </a>                                                           
                                                         </td>

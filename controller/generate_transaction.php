@@ -2,39 +2,25 @@
     // Include database connection code or establish a database connection
     session_start();
 
-    if(isset($_SESSION['admin_id']))
-    {
-        $admin_username = $_SESSION['admin_username'];
-    }
-    else
-    {
-        header('location: login.php');
-    }
+    $admin_username = $_SESSION['admin_username'];
 
     include('db_connection.php');
 
-    // Check if user ID is provided in the URL
-    if (isset($_GET['id'])) {
-        $userid = $_GET['id'];
+    // Fetch all users and their accounts from the database
+    try {       
 
-        // Prepare and execute SQL query to fetch user data based on the provided ID
-        $sql = "SELECT * FROM users WHERE user_id = :userid";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute(['userid' => $userid]);
-        
-        // Fetch user data
-        $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+        // Fetch users
+        $usersStmt = $pdo->prepare("SELECT user_id, fullname FROM users");
+        $usersStmt->execute();
+        $users = $usersStmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Check if user data is found
-        if (!$userData) {
-            echo "User not found.";
-            exit;
-        }        
+        // Fetch accounts
+        $accountsStmt = $pdo->prepare("SELECT account_id, user_id, account_number FROM accounts");
+        $accountsStmt->execute();
+        $accounts = $accountsStmt->fetchAll(PDO::FETCH_ASSOC);
 
-    } else {
-        // If no user ID is provided in the URL, redirect the user or display an error message
-        header("Location: error.php");
-        exit;
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
     }
 ?>
 <!doctype html>
@@ -43,7 +29,7 @@
     <head>
         
         <meta charset="utf-8" />
-        <title>Delete User | Admin Ragnarok</title>
+        <title>Edit User | Admin Ragnarok</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
@@ -98,12 +84,12 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0 font-size-18">Delete User - USERID = <?= $userData['user_id'];?></h4>
+                                    <h4 class="mb-sm-0 font-size-18">Generate User Transaction</h4>
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
-                                            <li class="breadcrumb-item active">Delete User</li>
+                                            <li class="breadcrumb-item active">Edit User</li>
                                         </ol>
                                     </div>
 
@@ -116,39 +102,73 @@
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">User Information</h4>
-                                        <p class="card-title-desc">This form contains user Information for <strong><?= $userData['fullname']; ?></strong>, be careful how you proceed.</p>
+                                        <h4 class="card-title">User Information</h4>                                        
                                     </div>
                                     <!-- end card header -->
+
+                                    <?php
+                                        if (isset($_GET['success']) && $_GET['success'] == '1')
+                                        {
+                                    ?>
+                                            <div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show" role="alert">
+                                                <i class="mdi mdi-check-all label-icon"></i><strong>Success</strong> - Admin Deleted Successfully
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                            </div>
+                                    <?php   
+                                        }
+                                        else if (isset($_GET['error']) && $_GET['error'] == '1')
+                                        {
+                                    ?>
+                                            <div class="alert alert-danger alert-dismissible alert-label-icon label-arrow fade show" role="alert">
+                                                <i class="mdi mdi-block-helper label-icon"></i><strong>Error</strong> - Something Went Wrong
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                            </div>
+                                    <?php
+                                        }
+                                    ?>
 
                                     <div class="card-body">
                                         <div>
                                             <h5 class="card-title mb-4">Personal Information</h5>
-                                            <form action="codes.php" method="POST">
+                                            <form action="generate_transaction_process.php" method="POST">
                                                 <input type="hidden" name="userid" value="<?= $userData['user_id']; ?>"/>
                                                 <div class="row">
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
-                                                            <label>Full Name</label>
-                                                            <input type="text" name="f_name" required data-pristine-required-message="Please Enter a name" class="form-control" value="<?= $userData['fullname'];?>" />
-                                                        </div>
-                                                    </div>                                                    
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Email</label>
-                                                            <input type="email" name="email" required data-pristine-required-message="Please Enter a Email" class="form-control" value="<?= $userData['email']; ?>" />
+                                                            <label>Select User</label>
+                                                            <select class="form-control" name="user_id" id="user_id" required>
+                                                                <?php foreach ($users as $user): ?>
+                                                                    <option value="<?php echo $user['user_id']; ?>"><?php echo $user['fullname']; ?></option>
+                                                                <?php endforeach; ?>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
-                                                            <label>Password</label>
-                                                            <input type="text" name="phone" required data-pristine-required-message="Please Enter a phone number" class="form-control" value="<?= $userData['password'];?>" />
+                                                            <label>Select Account Number</label>
+                                                            <select class="form-control" name="account_id" id="account_id" required>
+                                                                <?php foreach ($accounts as $account): ?>
+                                                                    <option value="<?php echo $account['account_id']; ?>" data-user-id="<?php echo $account['user_id']; ?>"><?php echo $account['account_number']; ?></option>
+                                                                <?php endforeach; ?>
+                                                            </select>
                                                         </div>
-                                                    </div>                                                                                                                                                            
+                                                    </div>                                                    
+                                                    
+                                                    <!-- <div class="col-xl-4 col-md-6">
+                                                        <div class="form-group mb-3">
+                                                            <label>Email Status</label>
+                                                            <select class="form-control form-select" name="email_status">
+                                                                <option value="<?= $userData['email_status']; ?>">Selected - <?= $userData['email_status'];?></option>
+                                                                <option value="not_verified">Not Verified</option>
+                                                                <option value="verified">Verified</option>
+                                                                <option value="pending">Pending</option>
+                                                            </select>
+                                                        </div>
+                                                    </div> -->                                                                                                        
                                                 </div>
                                                 <!-- end row -->
                                                 <div class="form-group">
-                                                    <button  type="" name="delete_user" class="btn btn-danger">Delete User</button>
+                                                    <button  type="" name="update_user" class="btn btn-primary">Submit form</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -169,7 +189,7 @@
         <!-- END layout-wrapper -->
 
         <!-- Right Sidebar -->
-            <?php include('includes/right_sidebar.php');?>
+        <?php include('includes/right_sidebar.php'); ?>
         <!-- /Right-bar -->
         
 

@@ -13,7 +13,7 @@
     include('db_connection.php');
 
     // Query to retrieve user data
-    $sql = "SELECT * FROM `wallets`";
+    $sql = "SELECT * FROM `transactions`";
 
     try {
         // Prepare the SQL statement
@@ -21,7 +21,7 @@
         // Execute the statement
         $stmt->execute();
         // Fetch all rows as an associative array
-        $wallets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $transactions = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         die("Error: Could not execute query. " . $e->getMessage());
     }
@@ -33,8 +33,8 @@
     <head>
         
         <meta charset="utf-8" />
-        <title>Delete Wallets | Admin Ragnarok</title>
-        <meta name="Deleteport" content="width=device-width, initial-scale=1.0">
+        <title>View Transactions | Admin Ragnarok</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -78,7 +78,7 @@
                     <!-- Sidebar -->
                 </div>
             </div>
-            <!-- Left Sidebar End -->            
+            <!-- Left Sidebar End -->
 
             
 
@@ -94,11 +94,11 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0 font-size-18">Delete Wallets</h4>
+                                    <h4 class="mb-sm-0 font-size-18">View Transactions</h4>
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Wallets</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Transactions</a></li>
                                             <li class="breadcrumb-item active">DataTables</li>
                                         </ol>
                                     </div>
@@ -112,63 +112,29 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Wallets Datatable</h4>                                         
+                                        <h4 class="card-title">Transactions Datatable</h4>                                        
                                     </div>
-                                    <?php
-                                        if (isset($_GET['success']) && $_GET['success'] == '1')
-                                        {
-                                    ?>
-                                            <div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show" role="alert">
-                                                <i class="mdi mdi-check-all label-icon"></i><strong>Success</strong> - Wallet Deleted Successfully
-                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                            </div>
-                                    <?php   
-                                        }
-                                        else if (isset($_GET['error']) && $_GET['error'] == '1')
-                                        {
-                                    ?>
-                                            <div class="alert alert-danger alert-dismissible alert-label-icon label-arrow fade show" role="alert">
-                                                <i class="mdi mdi-block-helper label-icon"></i><strong>Error</strong> - Something Went Wrong
-                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                            </div>
-                                    <?php
-                                        }
-                                    ?>
                                     <div class="card-body">
         
                                         <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                                             <thead>
                                             <tr>
-                                                <th>id</th>
-                                                <th>Crypto</th>
-                                                <th>Shortcode</th>
-                                                <th>Wallet Address</th>
-                                                <th>QR CODE</th>
-                                                <th>Date Added</th>
-                                                <th>Date Modified</th>
-                                                <th>Added By</th>
-                                                <th>Action</th>
+                                                <th>User ID</th>
+                                                <th>Transaction Type</th>
+                                                <th>Amount</th>
+                                                <th>Description</th>                                                                                                                                           
                                             </tr>
                                             </thead>   
                                             <tbody>
-                                                <?php foreach ($wallets as $wallet): ?>
+                                                <?php foreach ($transactions as $transaction): ?>
                                                     <tr>
-                                                        <td><?= $wallet['id'] ?></td>
-                                                        <td><?= $wallet['crypto'] ?></td>
-                                                        <td><?= $wallet['shortcode'] ?></td>
-                                                        <td><?= $wallet['wallet_address'] ?></td>
-                                                        <td><img style="width:50%;" src="<?= $wallet['qr_code_path']; ?>" alt=""></td>
-                                                        <td><?= $wallet['date_added'] ?></td>
-                                                        <td><?= $wallet['modified_at'] ?></td>
-                                                        <td><?= $wallet['modified_by'] ?></td>  
-                                                        <td>
-                                                            <a class="btn btn-danger btn-sm edit" href="delete_wallet.php?id=<?= $wallet['id']; ?>">
-                                                             DELETE
-                                                            </a>
-                                                        </td>                                                       
+                                                        <td><?= $transaction['user_id'] ?></td>
+                                                        <td><?= $transaction['type'] ?></td>
+                                                        <td><?= $transaction['amount'] ?></td>
+                                                        <td><?= $transaction['description'] ?></td>                                                                                                             
                                                     </tr>
                                                 <?php endforeach; ?>
-                                            </tbody>
+                                            </tbody>                                         
                                         </table>
         
                                     </div>
@@ -180,13 +146,21 @@
                 </div>
                 <!-- End Page-content -->
 
-                
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>document.write(new Date().getFullYear())</script> © Ragnarok.
+                            </div>                           
+                        </div>
+                    </div>
+                </footer>
                 
             </div>
             <!-- end main content-->
 
         </div>
-        <!-- END layout-wrapper -->        
+        <!-- END layout-wrapper -->
 
         <!-- Include jQuery -->
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

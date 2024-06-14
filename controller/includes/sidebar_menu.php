@@ -58,6 +58,20 @@
                                     <li><a href="approve_residency.php" data-key="t-horizontal">Approve User Residency</a></li>
                                 </ul>
                             </li>
+
+                            <li>
+                                <a href="view_transactions.php">
+                                    <i class="dripicons-home"></i>
+                                    <span data-key="t-dashboard">View Transactions</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="generate_transaction.php">
+                                    <i class="dripicons-home"></i>
+                                    <span data-key="t-dashboard">Generate 50 Transaction</span>
+                                </a>
+                            </li>
                             
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow">
