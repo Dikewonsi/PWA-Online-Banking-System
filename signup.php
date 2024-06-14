@@ -78,17 +78,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="mpay" />
-    <meta name="keywords" content="mpay" />
-    <meta name="author" content="mpay" />
+    <meta name="description" content="CapitalVista" />
+    <meta name="keywords" content="CapitalVista" />
+    <meta name="author" content="CapitalVista" />
     <link rel="manifest" href="./manifest.json" />
     <link rel="icon" href="assets/images/logo/favicon.png" type="image/x-icon" />
-    <title>mPay App</title>
+    <title>CapitalVista App</title>
     <link rel="apple-touch-icon" href="assets/images/logo/favicon.png" />
     <meta name="theme-color" content="#122636" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="mpay" />
+    <meta name="apple-mobile-web-app-title" content="CapitalVista" />
     <meta name="msapplication-TileImage" content="assets/images/logo/favicon.png" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -115,7 +115,7 @@
 <body class="auth-body">
     <!-- header starts -->
     <div class="auth-header">
-        <a href="signin.html"> <i class="back-btn" data-feather="arrow-left"></i> </a>
+        <a href="signin.php"> <i class="back-btn" data-feather="arrow-left"></i> </a>
 
         <img class="img-fluid img" src="assets/images/authentication/6.svg" alt="v1" />
 
@@ -176,7 +176,7 @@
             </div>
 
             <button type="submit" class="btn theme-btn w-100">Sign up</button>
-            <h4 class="signup">Already have an account? <a href="signin.html">Sign in</a></h4>
+            <h4 class="signup">Already have an account? <a href="signin.php">Sign in</a></h4>
         </div>
     </form>
     <!-- login section end -->
@@ -231,8 +231,8 @@
     <script src="assets/js/feather.min.js"></script>
     <script src="assets/js/custom-feather.js"></script>
 
-      <!-- jQuery -->
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- bootstrap js -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
