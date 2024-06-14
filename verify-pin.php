@@ -1,44 +1,43 @@
 <?php 
-    session_start();
-    include('db_connection.php');    
+  session_start();
+  include('db_connection.php');    
 
-    if (!isset($_SESSION['userid']) || !isset($_SESSION['transfer_amount'])) {
-        header("location:signin.php");
-        exit();
-    }
+  if (!isset($_SESSION['userid']) || !isset($_SESSION['transfer_amount'])) {
+      header("location:signin.php");
+      exit();
+  }
 
-    $pinError = false;
+  //Initiate Error
+  $pinError = false;
 
-    $rep_fullname = $_SESSION['rep_fullname'];
-    $rep_acc_num = $_SESSION['rep_acc_num'];
-    $amount = $_SESSION['transfer_amount'];
+  $userid = $_SESSION['userid'];
+  $rep_acc_num = $_SESSION['rep_acc_num'];
+  $rep_fullname = $_SESSION['rep_fullname'];
+  $transfer_type = $_SESSION['transfer_type'];
+  $rep_bank_name = isset($_SESSION['rep_bank_name']) ? $_SESSION['rep_bank_name'] : '';
+  $amount = $_SESSION['transfer_amount'];
+  $remark = $_SESSION['remark'];
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $pin = $_POST['pin'];
-        
-        // Here you should verify the user's pin. Assuming the user's pin is stored in the users table.
-        $userid = $_SESSION['userid'];
-
-        try {
-            // Fetch the user's pin from the database
-            $stmt = $pdo->prepare("SELECT password FROM users WHERE user_id = :userid");
-            $stmt->bindParam(':userid', $userid, PDO::PARAM_INT);
-            $stmt->execute();
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if ($user && $pin == $user['password']) {
-                // PIN verified, redirect to process the transfer
-                header("Location: process-transfer.php");
-                exit();
-            } else {
-                // throw new Exception("Invalid PIN.");
-                $pinError = true;
-            }
-        } catch (Exception $e) {
-            error_log("PIN verification failed: " . $e->getMessage(), 0);
-            $error_message = $e->getMessage();
-        }
-    }
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $pin = $_POST['pin'];
+      
+      try {
+          // Verify PIN
+          $stmt = $pdo->prepare("SELECT password FROM users WHERE user_id = :userid");
+          $stmt->bindParam(':userid', $userid, PDO::PARAM_INT);
+          $stmt->execute();
+          $user = $stmt->fetch(PDO::FETCH_ASSOC);
+          
+          if (!$user || !$pin == $user['password']) {
+              $pinError = true;
+          }          
+          header("Location: process-transfer.php");
+          exit();
+      } catch (Exception $e) {
+          error_log("PIN verification failed: " . $e->getMessage(), 0);
+          $error_message = $e->getMessage();
+      }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,7 +93,7 @@
   <!-- pay money section starts -->
   <section class="pay-money section-b-space">
     <div class="custom-container">
-        <form action="verify-transfer-cv.php" method="POST">
+        <form action="verify-pin.php" method="POST">
             <div class="" align="center">
                 <img class="" src="assets/images/icons/password.png" style="width:100px;" alt="p3" />
             </div>

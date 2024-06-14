@@ -241,7 +241,7 @@
     <div class="custom-container">
       <ul class="categories-list">
         <li>
-          <a href="transfer.php">
+          <a href="transfer.php?transfer_type=intra">
             <div class="categories-box">
               <i class="categories-icon" data-feather="repeat"></i>
             </div>
@@ -249,7 +249,7 @@
           </a>
         </li>
         <li>
-          <a href="to-bank.php">
+          <a href="transfer.php?transfer_type=inter">
             <div class="categories-box">
               <img src="assets/images/icons/bank.png" style="width:30px;" alt="">
             </div>
