@@ -15,7 +15,9 @@
       if ($pin !== $confirm_pin)
       {
           $pinError = true;
-      } else {               
+      }
+      else
+      {               
 
           try {
 
@@ -35,7 +37,7 @@
 
                 // Insert user data into the users table
                 $stmt = $pdo->prepare("INSERT INTO users (email, password, fullname) VALUES (?, ?, ?)");
-                $stmt->execute([$email, $hashed_pin, $fullname]);
+                $stmt->execute([$email, $pin, $fullname]);
 
                 // Retrieve the user_id of the newly created user
                 $user_id = $pdo->lastInsertId();
@@ -56,7 +58,7 @@
                 $pdo->commit();
 
                 // Redirect to login page after successful signup
-                header("Location: success.php");
+                header("Location: success_signup.php");
               }            
           } catch (PDOException $e) {
               // Rollback transaction in case of an error
@@ -156,14 +158,14 @@
             <div class="form-group">
                 <label for="newpin" class="form-label">Enter login pin</label>
                 <div class="form-input">
-                    <input type="number" id="newpin" class="form-control" name="pin" placeholder="Enter a 4-digit pin" maxlength="4" required />
+                    <input type="password" id="newpin" class="form-control" name="pin" placeholder="Enter a 4-digit pin" maxlength="4" required />
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="confirmpin" class="form-label">Re-enter login pin</label>
                 <div class="form-input">
-                    <input type="number" id="confirmpin" class="form-control" name="pin1" placeholder="Re-enter your 4-digit pin" maxlength="4" required />
+                    <input type="password" id="confirmpin" class="form-control" name="pin1" placeholder="Re-enter your 4-digit pin" maxlength="4" required />
                 </div>
             </div>
             <div class="remember-option mt-3">
@@ -191,7 +193,7 @@
                         <img class="img-fluid" src="assets/images/authentication/cloud.png" style="width:30%;" alt="error" />
                     </div>
                     <h3>Both Passwords do not match.</h3>
-                    <a href="element-modal.html" class="btn theme-btn successfully w-100" data-bs-toggle="modal">Try
+                    <a href="signup.php" class="btn theme-btn successfully w-100" data-bs-toggle="modal">Try
                         again</a>
                 </div>
                 <button type="button" class="btn close-btn" data-bs-dismiss="modal">
@@ -214,7 +216,7 @@
                         <img class="img-fluid" src="assets/images/authentication/email.png" width="100px;" alt="error" />
                     </div>
                     <h3>A user already has this email registered.</h3>
-                    <a href="element-modal.html" class="btn theme-btn successfully w-100" data-bs-toggle="modal">Try
+                    <a href="signup.php" class="btn theme-btn successfully w-100" data-bs-toggle="modal">Try
                         again</a>
                 </div>
                 <button type="button" class="btn close-btn" data-bs-dismiss="modal">
