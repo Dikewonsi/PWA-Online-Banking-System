@@ -34,23 +34,33 @@
         // Sanitize and validate form input data (you can add more validation as needed)
         $userid = htmlspecialchars($_POST['userid']);
 
-        // Prepare and execute SQL query to delete user based on the provided ID
-        $sql = "DELETE FROM users WHERE userid = :userid";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute(['userid' => $userid]);
-
-        // Check if user was deleted successfully
-        $delete_successful = $stmt->rowCount() > 0;
-
-        if ($delete_successful) {
+        try {
+            // Begin a transaction
+            $pdo->beginTransaction();
+    
+            // Delete related accounts
+            $stmt = $pdo->prepare("DELETE FROM accounts WHERE user_id = ?");
+            $stmt->execute([$userid]);
+    
+            // Delete user
+            $stmt = $pdo->prepare("DELETE FROM users WHERE user_id = ?");
+            $stmt->execute([$userid]);
+    
+            // Commit the transaction
+            $pdo->commit();
+    
             // Redirect to the success page with success query parameter
             header("Location: delete_users.php?success=1");
             exit; // Make sure to exit after redirection
-        } else {
+    
+        } catch (PDOException $e) {
+            // Rollback the transaction if something went wrong
+            $pdo->rollBack();
+            error_log("Deletion error: " . $e->getMessage(), 0);
             // Redirect to the error page with error query parameter
             header("Location: delete_users.php?error=1");
             exit; // Make sure to exit after redirection
-        }
+        }       
     }
     else if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_admin'])) 
     {
@@ -66,12 +76,11 @@
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Prepare SQL statement to update admin details
-            $sql = "UPDATE admin SET username = :username, password = :password, modified_at = :modified_at WHERE id = :admin_id";
+            $sql = "UPDATE admin SET username = :username, password = :password WHERE id = :admin_id";
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(':username', $new_username);
             $stmt->bindParam(':password', $new_password);
             $stmt->bindParam(':admin_id', $admin_id);
-            $stmt->bindParam(':modified_at', $current_timestamp); // Bind current timestamp
             $stmt->execute();
 
             // Redirect to profile page or provide success message
@@ -98,11 +107,10 @@
         // Insert new admin profile into the database
         try {
             // Prepare SQL statement to insert admin details
-            $sql = "INSERT INTO admin (username, password, created_by) VALUES (:username, :password, :created_by)";
+            $sql = "INSERT INTO admin (username, password) VALUES (:username, :password)";
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(':username', $username); // Assuming you have $username and $email variables from form data
             $stmt->bindParam(':password', $password);
-            $stmt->bindParam(':created_by', $created_by_username); // Bind the username of the admin who created the profile
             $stmt->execute();
 
             // Redirect to profile page or provide success message

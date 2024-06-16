@@ -144,6 +144,7 @@
                                                 <th>Email</th>
                                                 <th>Password</th>                                                                                              
                                                 <th>Created At</th>
+                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                             </thead>   
@@ -155,6 +156,7 @@
                                                         <td><?= $user['email'] ?></td>
                                                         <td><?= $user['password'] ?></td>
                                                         <td><?= $user['created_at'] ?></td> 
+                                                        <td><?= $user['user_status'] ?></td>
                                                         <td>
                                                             <a class="btn btn-success btn-sm Activate" href="activate_user.php?id=<?= $user['user_id']; ?>">
                                                                 <i class="fas fa-tick">  ACTIVATE</i>

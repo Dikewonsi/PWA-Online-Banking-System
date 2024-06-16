@@ -116,11 +116,44 @@
                                                     ?>
                                                     <span><?= $result['total_users']; ?></span>
                                                 </h4>
-                                            </div>
+                                            </div>                                            
                                         </div>                                        
-                                    </div><!-- end card body -->
+                                    </div><!-- end card body -->                                    
+                                </div><!-- end card -->                                                                 
+                            </div><!-- end col --> 
+                            
+                            <div class="col-xl-3 col-md-6">
+                                <!-- card -->
+                                <div class="card card-h-100">
+                                    <!-- card body -->
+                                    <div class="card-body">
+                                        <div class="row align-items-center">
+                                            <div class="col-6">
+                                                <span class="text-muted mb-3 lh-1 d-block text-truncate">Transactions</span>
+                                                <h4 class="mb-3">
+                                                    <?php
+                                                        // SQL query to count users
+                                                        $sql = "SELECT COUNT(*) AS total_transactions FROM transactions"; // Replace "users_table" with your actual table name
+    
+                                                        // Prepare statement
+                                                        $stmt = $pdo->prepare($sql);
+                                                        
+                                                        // Execute statement
+                                                        $stmt->execute();
+                                                        
+                                                        // Fetch result
+                                                        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                                                    ?>
+                                                    <span><?= $result['total_transactions']; ?></span>
+                                                </h4>
+                                            </div>
+                                            
+                                        </div>                                        
+                                    </div><!-- end card body -->                                    
                                 </div><!-- end card -->
-                            </div><!-- end col -->                            
+                                 
+                                
+                            </div><!-- end col --> 
                         </div><!-- end row-->                       
                     </div>
                     <!-- container-fluid -->

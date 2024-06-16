@@ -86,7 +86,7 @@
                         <img src="images/lazy.svg" data-src="images/icon/icon_06.svg" alt="" class="lazy-img icon me-auto">
                         <h4 class="fw-bold mt-30 mb-25">Made for More Checking</h4>
                         <p class="mb-20">Whatever your age, lifestyle or needs, it simplifies your financial life.</p>
-                        <a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
+                        <a href="javascript:void(0);" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
                     </div>
                     <!-- /.card-style-two -->
                 </div>
@@ -95,7 +95,7 @@
                         <img src="images/lazy.svg" data-src="images/icon/icon_07.svg" alt="" class="lazy-img icon me-auto">
                         <h4 class="fw-bold mt-30 mb-25">Made for More Savings</h4>
                         <p class="mb-20">Save for vacations, holidays, a new car. These accounts are surprisingly perfect.</p>
-                        <a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
+                        <a href="javascript:void(0);" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
                     </div>
                     <!-- /.card-style-two -->
                 </div>
@@ -104,7 +104,7 @@
                         <img src="images/lazy.svg" data-src="images/icon/icon_08.svg" alt="" class="lazy-img icon me-auto">
                         <h4 class="fw-bold mt-30 mb-25">Made for More Borrowing</h4>
                         <p class="mb-20">Begin with 130 years of expertise and our people on your side.</p>
-                        <a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
+                        <a href="javascript:void(0);" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
                     </div>
                     <!-- /.card-style-two -->
                 </div>
@@ -113,7 +113,7 @@
                         <img src="images/lazy.svg" data-src="images/icon/icon_08.svg" alt="" class="lazy-img icon me-auto">
                         <h4 class="fw-bold mt-30 mb-25">Made for More Knowing</h4>
                         <p class="mb-20">Manage your finances easier than ever with these simple tools.</p>
-                        <a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
+                        <a href="javascript:void(0);" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
                     </div>
                     <!-- /.card-style-two -->
                 </div>
@@ -144,8 +144,8 @@
                 <!-- /.title-one -->
                 <p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-20">Your success is our mission. As business advisors, we offer expert guidance, unlocking your potential for growth and profitability</p>
                 <div class="d-inline-flex flex-wrap align-items-center">
-                    <a href="about-us-v1.html" class="btn-four mt-15 me-4">More About us</a>
-                    <a href="contact.html" class="btn-three icon-link mt-15">
+                    <a href="about.php" class="btn-four mt-15 me-4">More About us</a>
+                    <a href="contact.php" class="btn-three icon-link mt-15">
                         <span>Request a Callback</span>
                         <img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img icon ms-1">
                     </a>
@@ -272,8 +272,8 @@
                     <!-- /.title-one -->
                     <p class="text-lg mt-40 lg-mt-30 mb-30">Contact our friendly team for quick and helpful answers.</p>
                     <div class="d-inline-flex flex-wrap justify-content-center">
-                        <a href="contact.html" class="btn-four mt-10 me-2">Get a Quote</a>
-                        <a href="contact.html" class="btn-six mt-10 ms-2">Contact</a>
+                        <a href="contact.php" class="btn-four mt-10 me-2">Get a Quote</a>
+                        <a href="contact.php" class="btn-six mt-10 ms-2">Contact</a>
                     </div>
                 </div>
             </div>

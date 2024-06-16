@@ -168,8 +168,7 @@
                                                         <form action="codes.php" method="post">
                                                             <div>
                                                                 <div class="mb-3">
-                                                                    <label for="example-text-input" class="form-label">Username</label>
-                                                                    <input type="hidden" name="id" value="<?= $admin_id; ?>">
+                                                                    <label for="example-text-input" class="form-label">Username</label>                                                                    
                                                                     <input class="form-control" type="text" name="username"  require id="example-text-input">
                                                                 </div>
                                                                 <div class="mb-3">

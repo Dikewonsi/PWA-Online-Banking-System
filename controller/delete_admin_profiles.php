@@ -143,9 +143,7 @@
                                                 <th>Admin ID</th>
                                                 <th>Username</th>
                                                 <th>Password</th>
-                                                <th>Created At</th>      
-                                                <th>Modified At</th>
-                                                <th>Created By</th>
+                                                <th>Created At</th> 
                                                 <th>Action</th>
                                             </tr>
                                             </thead>   
@@ -156,8 +154,6 @@
                                                         <td><?= $admin_data['username'] ?></td>
                                                         <td><?= $admin_data['password'] ?></td>
                                                         <td><?= $admin_data['created_at'] ?></td>
-                                                        <td><?= $admin_data['modified_at'] ?></td>                                                        
-                                                        <td><?= $admin_data['created_by'] ?></td>
                                                         <td>
                                                             <a class="btn btn-danger btn-sm edit" href="delete_admin_profile.php?id=<?= $admin_data['id']; ?>">
                                                              DELETE

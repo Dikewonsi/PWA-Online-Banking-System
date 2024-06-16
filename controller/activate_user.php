@@ -16,12 +16,12 @@
 
     // Check if user ID is provided in the URL
     if (isset($_GET['id'])) {
-        $userid = $_GET['id'];
+        $user_id = $_GET['id'];
 
         // Prepare and execute SQL query to update user's activation status based on the provided ID
-        $sql = "UPDATE users SET user_status = 1 WHERE userid = :userid";
+        $sql = "UPDATE users SET user_status = 1 WHERE user_id = :user_id";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute(['userid' => $userid]);
+        $stmt->execute(['user_id' => $user_id]);
 
         // Check if activation was successful
         $activation_successful = $stmt->rowCount() > 0;

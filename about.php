@@ -120,7 +120,7 @@
                         <img src="images/lazy.svg" data-src="images/icon/icon_06.svg" alt="" class="lazy-img icon me-auto">
                         <h4 class="fw-bold mt-30 mb-25">Expense Report</h4>
                         <p class="mb-20">Maximize convenience by paying for ads, subscriptions, and inventory with Mastercard®.</p>
-                        <a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
+                        <a href="javascript:void(0);" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
                     </div>
                     <!-- /.card-style-two -->
                 </div>
@@ -129,7 +129,7 @@
                         <img src="images/lazy.svg" data-src="images/icon/icon_07.svg" alt="" class="lazy-img icon me-auto">
                         <h4 class="fw-bold mt-30 mb-25">Tax Preparation</h4>
                         <p class="mb-20">We stay updated with the latest tax laws to provide you with accurate and efficient tax solutions.</p>
-                        <a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
+                        <a href="javascript:void(0);" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
                     </div>
                     <!-- /.card-style-two -->
                 </div>
@@ -138,7 +138,7 @@
                         <img src="images/lazy.svg" data-src="images/icon/icon_08.svg" alt="" class="lazy-img icon me-auto">
                         <h4 class="fw-bold mt-30 mb-25">Book keeping</h4>
                         <p class="mb-20">We offer personalized bookkeeping solutions that cater to your specific needs, helping you stay organized and financially healthy.</p>
-                        <a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
+                        <a href="javascript:void(0);" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
                     </div>
                     <!-- /.card-style-two -->
                 </div>

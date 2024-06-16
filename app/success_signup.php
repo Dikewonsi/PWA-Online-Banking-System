@@ -59,7 +59,7 @@
         </div>
       </div>
 
-      <a href="index.php" class="btn theme-btn w-100">Go to home</a>
+      <a href="../index.php" class="btn theme-btn w-100">Go to home</a>
     </div>
   </form>
   <!-- login section start -->

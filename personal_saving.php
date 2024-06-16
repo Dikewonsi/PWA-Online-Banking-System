@@ -35,7 +35,7 @@
                         <img src="images/lazy.svg" data-src="images/icon/icon_06.svg" alt="" class="lazy-img icon me-auto">
                         <h3 class="fw-bold mt-30 mb-25">Our Savings Accounts are straightforward and include the following:</h3>
                         <p class="mb-20">Online Banking | Mobile Banking | Mobile and Direct Deposit | Compare Savings Accounts</p>
-                        <a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
+                        <a href="javascript:void(0);" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
                     </div>
                     <!-- /.card-style-two -->
                 </div>

@@ -1,35 +1,41 @@
 <?php
     session_start();
-    require_once 'db_connection.php';
-    $emailError = false;
+    require_once 'db_connection.php';    
     $pinError = false;
+    $statusError = false;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Retrieve and sanitize input
-        $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-        $pin = htmlspecialchars($_POST['pin']);
-   
-        try {
-            // Prepare statement to get user by email
-            $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
-            $stmt->execute([$email]);
-            $user = $stmt->fetch();
-
-            // Verify user and password
-            if ($user && $pin == $user['password']) {
-                // Successful login, redirect to dashboard or home page
-                $_SESSION['userid'] = $user['user_id'];
-                header("Location: dashboard.php");
-                exit();
-            } else {
-                // Failed login
-                $pinError = true;
-            }
-        } catch (PDOException $e) {
-            error_log("Signin error: " . $e->getMessage(), 0);
-            $pinError = true;
-        }
-    }
+      // Retrieve and sanitize input
+      $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+      $pin = htmlspecialchars($_POST['pin']);
+  
+      try {
+          // Prepare statement to get user by email
+          $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
+          $stmt->execute([$email]);
+          $user = $stmt->fetch();
+  
+          // Verify user and password
+          if ($user && $pin == $user['password']) {
+              // Check if user_status is equal to 1
+              if ($user['user_status'] == 1) {
+                  // Successful login, redirect to dashboard or home page
+                  $_SESSION['userid'] = $user['user_id'];
+                  header("Location: dashboard.php");
+                  exit();
+              } else {
+                  // User status is not active
+                  $statusError = true;
+              }
+          } else {
+              // Failed login
+              $pinError = true;
+          }
+      } catch (PDOException $e) {
+          error_log("Signin error: " . $e->getMessage(), 0);
+          $pinError = true;
+      }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -136,7 +142,28 @@
             </div>
         </div>
     </div>
-    <!-- error modal starts -->    
+    <!-- error modal starts -->  
+     
+    <!-- error modal starts -->
+   <div class="modal fade" id="statusError" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Error</h2>
+                </div>
+                <div class="modal-body" align="center">
+                    <div class="error-img">
+                        <img class="img-fluid" src="assets/images/authentication/block-user.png" style="width:30%;" alt="error" />
+                    </div>
+                    <h3>Your account is pending verification. Please Wait for one hour if you just signed up.</h3>                                  
+                </div>
+                <button type="button" class="btn close-btn" data-bs-dismiss="modal">
+                    <i class="icon" data-feather="x"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- error modal starts -->  
 
   <!-- feather js -->
   <script src="assets/js/feather.min.js"></script>
@@ -163,14 +190,13 @@
         window.onload = function () {
             $('#error').modal('show');
         }
-    <?php endif; ?>
-
-    // Check if there's a pin error and show the modal
-    <?php if ($emailError) : ?>
+    <?php endif; ?>  
+    
+    <?php if ($statusError) : ?>
         window.onload = function () {
-            $('#errorEmail').modal('show');
+            $('#statusError').modal('show');
         }
-    <?php endif; ?>
+    <?php endif; ?>  
   </script>
 </body>
 

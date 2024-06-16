@@ -123,9 +123,7 @@
                                                 <th>Admin ID</th>
                                                 <th>Username</th>
                                                 <th>Password</th>
-                                                <th>Created At</th>      
-                                                <th>Modified At</th>
-                                                <th>Created By</th>
+                                                <th>Created At</th>                                                      
                                                 <th>Action</th>
                                             </tr>
                                             </thead>   
@@ -135,9 +133,7 @@
                                                         <td><?= $admin_data['id'];?></td>
                                                         <td><?= $admin_data['username'] ?></td>
                                                         <td><?= $admin_data['password'] ?></td>
-                                                        <td><?= $admin_data['created_at'] ?></td>
-                                                        <td><?= $admin_data['modified_at'] ?></td>                                                        
-                                                        <td><?= $admin_data['created_by'] ?></td>
+                                                        <td><?= $admin_data['created_at'] ?></td>                                                        
                                                         <td>
                                                             <a class="btn btn-primary btn-sm edit" href="edit_admin_profile.php?id=<?= $admin_data['id']; ?>">
                                                              EDIT

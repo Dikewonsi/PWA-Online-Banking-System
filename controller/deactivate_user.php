@@ -18,7 +18,7 @@
         $userid = $_GET['id'];
 
         // Prepare and execute SQL query to update user's activation status based on the provided ID
-        $sql = "UPDATE users SET user_status = 0 WHERE userid = :userid";
+        $sql = "UPDATE users SET user_status = 0 WHERE user_id = :userid";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(['userid' => $userid]);
 

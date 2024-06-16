@@ -46,41 +46,30 @@
                                         </a>
                                     </li>                                   
                                 </ul>
-                            </li>                            
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow">
-                                    <i class="dripicons-graph-pie"></i>
-                                    <span data-key="t-apps">User KYC</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="true">
-                                    <li><a href="approve_id.php" data-key="t-level-2-1">Approve User ID</a></li>
-                                    <li><a href="approve_residency.php" data-key="t-horizontal">Approve User Residency</a></li>
-                                </ul>
                             </li>
 
                             <li>
                                 <a href="update_user_balance.php">
-                                    <i class="dripicons-home"></i>
+                                    <i class="dripicons-graph-pie"></i>
                                     <span data-key="t-dashboard">Update User Balance</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="view_transactions.php">
-                                    <i class="dripicons-home"></i>
+                                <i class="dripicons-graph-pie"></i>
                                     <span data-key="t-dashboard">View Transactions</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="generate_transaction.php">
-                                    <i class="dripicons-home"></i>
+                                <i class="dripicons-graph-pie"></i>
                                     <span data-key="t-dashboard">Generate 50 Transaction</span>
                                 </a>
                             </li>
                             
-                            <li>
+                            <!-- <li>
                                 <a href="javascript: void(0);" class="has-arrow">
                                     <i class="dripicons-gear"></i>
                                     <span data-key="t-apps">Operations</span>
@@ -89,7 +78,7 @@
                                     <li><a href="edit_trades_per_day.php" data-key="t-horizontal">Edit User Trades Per Day</a></li>
                                     <li><a href="requested_withdrawals.php" data-key="t-horizontal">Requested Withdrawals</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
 
                             <li class="menu-title mt-2" data-key="t-components">Settings</li>
                             
