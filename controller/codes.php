@@ -163,6 +163,47 @@
         header("Location: update_user_balance.php?success=1");
         exit;
     } 
+    else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_user_card_balance']))
+    {
+        // Validate the inputs
+        if (is_numeric($amount) && $amount > 0)
+        {
+            try
+            {
+                // Begin transaction
+                $pdo->beginTransaction();
+
+                // Fetch current balance
+                $stmt = $pdo->prepare("SELECT balance FROM cards WHERE card_id = ?");
+                $stmt->execute([$card_id]);
+                $card = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                if ($card) {
+                    $new_balance = $card['balance'] + $amount;
+
+                    // Update balance
+                    $stmt = $pdo->prepare("UPDATE cards SET balance = ? WHERE card_id = ?");
+                    $stmt->execute([$new_balance, $card_id]);
+
+                    // Commit transaction
+                    $pdo->commit();
+
+                    echo "Card balance updated successfully.";
+                } else {
+                    echo "Card not found.";
+                }
+            } catch (Exception $e) {
+                // Rollback transaction in case of error
+                $pdo->rollBack();
+                error_log("Failed to update card balance: " . $e->getMessage());
+                echo "Failed to update card balance.";
+            }
+        }
+        else
+        {
+            echo "Invalid amount.";
+        }
+    } 
 
 
     // Function to get the username of the admin who is creating the profile

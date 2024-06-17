@@ -68,6 +68,13 @@
                                     <span data-key="t-dashboard">Generate 50 Transaction</span>
                                 </a>
                             </li>
+
+                            <li>
+                                <a href="update_user_card_balance.php">
+                                    <i class="dripicons-graph-pie"></i>
+                                    <span data-key="t-dashboard">Update User Card Balance</span>
+                                </a>
+                            </li>
                             
                             <!-- <li>
                                 <a href="javascript: void(0);" class="has-arrow">
