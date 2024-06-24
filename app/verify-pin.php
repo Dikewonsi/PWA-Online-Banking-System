@@ -11,7 +11,7 @@
   $pinError = false;
 
   $userid = $_SESSION['userid'];
-  $rep_acc_num = $_SESSION['rep_acc_num'];
+  $rep_acc_num = $_SESSION['rep_acc_num']; 
   $rep_fullname = $_SESSION['rep_fullname'];
   $transfer_type = $_SESSION['transfer_type'];
   $rep_bank_name = isset($_SESSION['rep_bank_name']) ? $_SESSION['rep_bank_name'] : '';

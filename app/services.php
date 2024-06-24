@@ -85,43 +85,55 @@
 
       <div class="row gy-3">
         <div class="col-3">
-          <div class="service-box">
-            <i class="service-icon" data-feather="activity"></i>
-          </div>
-          <h5 class="mt-2 text-center dark-text">Electricity</h5>
+          <a href="#error" data-bs-toggle="modal">
+            <div class="service-box">
+              <i class="service-icon" data-feather="activity"></i>
+            </div>
+            <h5 class="mt-2 text-center dark-text">Electricity</h5>
+          </a>          
         </div>
 
         <div class="col-3">
-          <div class="service-box">
-            <i class="service-icon" data-feather="droplet"></i>
-          </div>
-          <h5 class="mt-2 text-center dark-text">Water</h5>
+          <a href="#error" data-bs-toggle="modal">
+            <div class="service-box">
+              <i class="service-icon" data-feather="droplet"></i>
+            </div>
+            <h5 class="mt-2 text-center dark-text">Water</h5>
+          </a>           
         </div>
         <div class="col-3">
-          <div class="service-box">
-            <i class="service-icon" data-feather="wifi"></i>
-          </div>
-          <h5 class="mt-2 text-center dark-text">Internet</h5>
-        </div>
-
-        <div class="col-3">
-          <div class="service-box">
-            <i class="service-icon" data-feather="monitor"></i>
-          </div>
-          <h5 class="mt-2 text-center dark-text">Television</h5>
+          <a href="#error" data-bs-toggle="modal">
+            <div class="service-box">
+              <i class="service-icon" data-feather="wifi"></i>
+            </div>
+            <h5 class="mt-2 text-center dark-text">Internet</h5>
+          </a>
         </div>
 
         <div class="col-3">
-          <div class="service-box">
-            <i class="service-icon" data-feather="tablet"></i>
-          </div>
-          <h5 class="mt-2 text-center dark-text">Mobile</h5>
+          <a href="#error" data-bs-toggle="modal">
+            <div class="service-box">
+              <i class="service-icon" data-feather="monitor"></i>
+            </div>
+            <h5 class="mt-2 text-center dark-text">Television</h5>
+          </a>
+        </div>
+
+        <div class="col-3">
+          <a href="#error" data-bs-toggle="modal">
+            <div class="service-box">
+              <i class="service-icon" data-feather="tablet"></i>
+            </div>
+            <h5 class="mt-2 text-center dark-text">Mobile</h5>
+          </a>
         </div>
         <div class="col-3">
-          <div class="service-box">
-            <i class="iconsax service-icon" data-icon="wallet-open-tick"></i>
-          </div>
-          <h5 class="mt-2 text-center dark-text">E-wallet</h5>
+          <a href="#error" data-bs-toggle="modal">
+            <div class="service-box">
+              <i class="iconsax service-icon" data-icon="wallet-open-tick"></i>
+            </div>
+            <h5 class="mt-2 text-center dark-text">E-wallet</h5>
+          </a>
         </div>
       </div>
     </div>
@@ -135,47 +147,82 @@
 
       <div class="row gy-3">
         <div class="col-3">
-          <div class="service-box">
-            <i class="service-icon" data-feather="bar-chart-2"></i>
-          </div>
-          <h5 class="mt-2 text-center dark-text">Investment</h5>
+          <a href="#error" data-bs-toggle="modal">
+            <div class="service-box">
+              <i class="service-icon" data-feather="bar-chart-2"></i>
+            </div>
+            <h5 class="mt-2 text-center dark-text">Investment</h5>
+          </a>
         </div>
         <div class="col-3">
-          <div class="service-box">
-            <i class="service-icon" data-feather="check-circle"></i>
-          </div>
-          <h5 class="mt-2 text-center dark-text">Deals</h5>
+          <a href="#error" data-bs-toggle="modal">
+            <div class="service-box">
+              <i class="service-icon" data-feather="check-circle"></i>
+            </div>
+            <h5 class="mt-2 text-center dark-text">Deals</h5>
+          </a>
         </div>
         <div class="col-3">
-          <div class="service-box">
-            <i class="service-icon" data-feather="plus-square"></i>
-          </div>
-          <h5 class="mt-2 text-center dark-text">Medical</h5>
+          <a href="#error" data-bs-toggle="modal">
+            <div class="service-box">
+              <i class="service-icon" data-feather="plus-square"></i>
+            </div>
+            <h5 class="mt-2 text-center dark-text">Medical</h5>
+          </a>
         </div>
 
         <div class="col-3">
-          <div class="service-box">
-            <i class="iconsax service-icon" data-icon="car"></i>
-          </div>
-          <h5 class="mt-2 text-center dark-text">Car</h5>
+          <a href="#error" data-bs-toggle="modal">
+            <div class="service-box">
+              <i class="iconsax service-icon" data-icon="car"></i>
+            </div>
+            <h5 class="mt-2 text-center dark-text">Car</h5>
+          </a>
         </div>
 
         <div class="col-3">
-          <div class="service-box">
-            <i class="service-icon" data-feather="shopping-bag"></i>
-          </div>
-          <h5 class="mt-2 text-center dark-text">Shopping</h5>
+          <a href="#error" data-bs-toggle="modal">
+            <div class="service-box">
+              <i class="service-icon" data-feather="shopping-bag"></i>
+            </div>
+            <h5 class="mt-2 text-center dark-text">Shopping</h5>
+          </a>
         </div>
         <div class="col-3">
-          <div class="service-box">
-            <i class="iconsax service-icon" data-icon="game-controller"></i>
-          </div>
-          <h5 class="mt-2 text-center dark-text">Games</h5>
+          <a href="#error" data-bs-toggle="modal">
+            <div class="service-box">
+              <i class="iconsax service-icon" data-icon="game-controller"></i>
+            </div>
+            <h5 class="mt-2 text-center dark-text">Games</h5>
+          </a>
         </div>
       </div>
     </div>
   </section>
   <!-- service section end -->
+
+  <!-- error modal starts -->
+  <div class="modal error-modal fade" id="error" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Error</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="error-img">
+                        <img class="img-fluid" src="assets/images/svg/error.svg" alt="error" />
+                    </div>
+                    <h3>Your account is not verified for this transaction.</h3>
+                    <a href="element-modal.html" class="btn theme-btn successfully w-100" data-bs-toggle="modal">Try
+                        again</a>
+                </div>
+                <button type="button" class="btn close-btn" data-bs-dismiss="modal">
+                    <i class="icon" data-feather="x"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- error modal starts -->
 
   <!-- feather js -->
   <script src="assets/js/feather.min.js"></script>

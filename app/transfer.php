@@ -148,8 +148,35 @@
                 <div class="form-input">
                   <select name="rep_bank_name" class="form-control" required>
                       <option value="" disabled selected>Select Bank</option>
-                      <option value="BNP">BNP Paribas</option>
-                      <option value="HSBC">HSBC Bank</option>
+                      <option value="chase">Chase Bank</option>
+                      <option value="bank_of_america">Bank of America</option>
+                      <option value="wells_fargo">Wells Fargo</option>
+                      <option value="citibank">Citibank</option>
+                      <option value="us_bank">U.S. Bank</option>
+                      <option value="truist">Truist Bank</option>
+                      <option value="pnc_bank">PNC Bank</option>
+                      <option value="capital_one">Capital One</option>
+                      <option value="td_bank">TD Bank</option>
+                      <option value="goldman_sachs">Goldman Sachs</option>
+                      <option value="fifth_third_bank">Fifth Third Bank</option>
+                      <option value="ally_bank">Ally Bank</option>
+                      <option value="suntrust_bank">SunTrust Bank</option>
+                      <option value="bbva_usa">BBVA USA</option>
+                      <option value="bmo_harris_bank">BMO Harris Bank</option>
+                      <option value="keybank">KeyBank</option>
+                      <option value="hsbc_usa">HSBC USA</option>
+                      <option value="regions_bank">Regions Bank</option>
+                      <option value="citizens_bank">Citizens Bank</option>
+                      <option value="synchrony_bank">Synchrony Bank</option>
+                      <option value="discover_bank">Discover Bank</option>
+                      <option value="american_express_bank">American Express Bank</option>
+                      <option value="first_republic_bank">First Republic Bank</option>
+                      <option value="silicon_valley_bank">Silicon Valley Bank</option>
+                      <option value="new_york_community_bank">New York Community Bank</option>
+                      <option value="huntington_bank">Huntington Bank</option>
+                      <option value="m&t_bank">M&T Bank</option>
+                      <option value="union_bank">Union Bank</option>
+                      <option value="cit_bank">CIT Bank</option>
                       <!-- (Other bank options) -->
                   </select>
                 </div>

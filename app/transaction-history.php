@@ -2,25 +2,23 @@
     session_start();
     include('db_connection.php');    
 
-    if(!isset($_SESSION['userid']))
-    {
-      header("location:signin.php");
-      exit();
+    if(!isset($_SESSION['userid'])) {
+        header("location:signin.php");
+        exit();
     }
 
     $userid = $_SESSION['userid'];
 
     // Fetch transactions for the user
     try {
-    $stmt = $pdo->prepare("SELECT * FROM transactions WHERE user_id = :userid ORDER BY transaction_date DESC");
-    $stmt->bindParam(':userid', $userid, PDO::PARAM_INT);
-    $stmt->execute();
-    $transactions = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt = $pdo->prepare("SELECT * FROM transactions WHERE user_id = :userid ORDER BY transaction_date DESC");
+        $stmt->bindParam(':userid', $userid, PDO::PARAM_INT);
+        $stmt->execute();
+        $transactions = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
-    error_log("Failed to fetch transactions: " . $e->getMessage());
-    $transactions = [];
+        error_log("Failed to fetch transactions: " . $e->getMessage());
+        $transactions = [];
     }
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,85 +71,76 @@
           <a href="#" class="back-btn" role="button" data-bs-toggle="dropdown">
             <i class="icon" data-feather="settings"></i>
           </a>
-
-          <!-- <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Most recent </a></li>
-            <li><a class="dropdown-item" href="#period" data-bs-toggle="modal">Custom</a></li>
-            <li><a class="dropdown-item" href="#">Last 1 month</a></li>
-            <li><a class="dropdown-item" href="#">Remove all</a></li>
-          </ul> -->
         </div>
       </div>
     </div>
   </header>
   <!-- header end -->
 
-
   <!-- person transaction list section starts -->
-  <!-- Display Sections for Today, Yesterday, Last Week, and Last Month -->
-    <div class="row gy-3">
-        <?php if (empty($transactions)): ?>
+  <div class="row gy-3">
+      <?php if (empty($transactions)): ?>
+        <div class="col-12">
+          <div class="transaction-box">                
+              <div class="d-flex gap-3">
+                  <div class="transaction-details">
+                  <div class="transaction-name">
+                      <h5>No Transactions Found</h5>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                      <h5 class="light-text">You have no transactions yet.</h5>
+                  </div>
+                  </div>
+              </div>                
+          </div>
+        </div>
+      <?php else: ?>
+        <?php foreach ($transactions as $transaction): ?>
           <div class="col-12">
-            <div class="transaction-box">                
-                <div class="d-flex gap-3">
-                    <div class="transaction-details">
-                    <div class="transaction-name">
-                        <h5>No Transactions Found</h5>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <h5 class="light-text">You have no transactions yet.</h5>
-                    </div>
-                    </div>
-                </div>                
+            <div class="transaction-box">
+              <a href="#" class="transaction-link d-flex gap-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#transaction-detail"
+                  data-transaction-id="<?php echo $transaction['transaction_id']; ?>"
+                  data-payment-status="<?php echo htmlspecialchars($transaction['type']); ?>"
+                  data-transaction-date="<?php echo date('d M, Y', strtotime($transaction['transaction_date'])); ?>"
+                  data-transaction-category="<?php echo htmlspecialchars($transaction['category']); ?>"
+                  data-description="<?php echo htmlspecialchars($transaction['description']); ?>"
+                  data-amount="<?php echo number_format($transaction['amount'], 2); ?>">            
+                  <div class="transaction-image">
+                      <?php
+                      $imageSrc = '';
+                      if ($transaction['type'] == 'deposit') {
+                          $imageSrc = 'plus-money';
+                      } elseif ($transaction['type'] == 'transfer') {
+                          $imageSrc = 'minus-money';
+                      } elseif ($transaction['type'] == 'withdrawal') {
+                          $imageSrc = 'minus-money';
+                      } else {
+                          $imageSrc = 'default'; // Fallback image
+                      }
+                      ?>
+                      <img class="img-fluid transaction-icon" src="assets/images/icons/<?php echo $imageSrc; ?>.png" alt="icon" />
+                  </div>
+                  <div class="transaction-details">
+                      <div class="transaction-name">
+                      <h5><?php echo htmlspecialchars($transaction['type']); ?></h5>
+                      <h3 class="<?php echo $transaction['type'] == 'deposit' ? 'success-color' : 'error-color'; ?>">
+                          $<?php echo number_format($transaction['amount'], 2); ?>
+                      </h3>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                      <h5 class="light-text"><?php echo htmlspecialchars($transaction['description']); ?></h5>
+                      <h5 class="light-text"><?php echo date('d M, h:i a', strtotime($transaction['transaction_date'])); ?></h5>
+                      </div>
+                  </div>                    
+              </a>
             </div>
           </div>
-        <?php else: ?>
-          <?php foreach ($transactions as $transaction): ?>
-            <div class="col-12">
-              <div class="transaction-box">
-                <a href="#" class="transaction-link d-flex gap-3"
-                    data-bs-toggle="modal"
-                    data-bs-target="#transaction-detail"
-                    data-transaction-id="<?php echo $transaction['transaction_id']; ?>"
-                    data-payment-status="<?php echo htmlspecialchars($transaction['type']); ?>"
-                    data-transaction-date="<?php echo date('d M, Y', strtotime($transaction['transaction_date'])); ?>"
-                    data-transaction-category="<?php echo htmlspecialchars($transaction['category']); ?>"
-                    data-amount="<?php echo number_format($transaction['amount'], 2); ?>">            
-                    <div class="transaction-image">
-                        <?php
-                        $imageSrc = '';
-                        if ($transaction['type'] == 'deposit') {
-                            $imageSrc = 'plus-money';
-                        } elseif ($transaction['type'] == 'transfer') {
-                            $imageSrc = 'minus-money';
-                        } elseif ($transaction['type'] == 'withdrawal') {
-                            $imageSrc = 'minus-money';
-                        } else {
-                            $imageSrc = 'default'; // Fallback image
-                        }
-                        ?>
-                        <img class="img-fluid transaction-icon" src="assets/images/icons/<?php echo $imageSrc; ?>.png" alt="icon" />
-                    </div>
-                    <div class="transaction-details">
-                        <div class="transaction-name">
-                        <h5><?php echo htmlspecialchars($transaction['type']); ?></h5>
-                        <h3 class="<?php echo $transaction['type'] == 'deposit' ? 'success-color' : 'error-color'; ?>">
-                            $<?php echo number_format($transaction['amount'], 2); ?>
-                        </h3>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                        <h5 class="light-text"><?php echo htmlspecialchars($transaction['description']); ?></h5>
-                        <h5 class="light-text"><?php echo date('d M, h:i a', strtotime($transaction['transaction_date'])); ?></h5>
-                        </div>
-                    </div>                    
-                </a>
-              </div>
-            </div>
-          <?php endforeach; ?>
-        <?php endif; ?>
-    </div>
+        <?php endforeach; ?>
+      <?php endif; ?>
+  </div>
   <!-- person transaction list section end -->
-
 
   <!-- transaction detail modal start -->
   <div class="modal successful-modal transfer-details fade" id="transaction-detail" tabindex="-1">
@@ -172,8 +161,13 @@
                     </li>
                     
                     <li>
-                        <h3 class="fw-normal dark-text">Transaction Description</h3>
-                        <h3 class="fw-normal light-text" id="transaction-category"></h3>
+                        <h3 class="fw-normal dark-text">Transaction Category</h3>
+                        <h3 class="fw-normal light-text"  id="transaction-category"></h3>
+                    </li>
+
+                    <li>
+                        <h3 class="fw-normal dark-text">Description</h3>
+                        <h3 class="fw-normal light-text" id="description"></h3>
                     </li>
                     <li class="amount">
                         <h3 class="fw-normal dark-text">Amount</h3>
@@ -200,36 +194,38 @@
   <script src="assets/js/script.js"></script>
 
   <!-- script js -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const transactionLinks = document.querySelectorAll('.transaction-link');
-        const modalPaymentStatus = document.getElementById('payment-status');
-        const modalTransactionDate = document.getElementById('transaction-date');
-        
-        const modalTransactionCategory = document.getElementById('transaction-category');
-        const modalAmount = document.getElementById('amount');
+  <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const transactionLinks = document.querySelectorAll('.transaction-link');
+          const modalPaymentStatus = document.getElementById('payment-status');
+          const modalTransactionDate = document.getElementById('transaction-date');
+          
+          const modalTransactionCategory = document.getElementById('transaction-category');
+          const modalAmount = document.getElementById('amount');
+          const modalDescription = document.getElementById('description');
 
-        transactionLinks.forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
+          transactionLinks.forEach(link => {
+              link.addEventListener('click', function (event) {
+                  event.preventDefault();
 
-                // Fetch data attributes
-                const paymentStatus = this.getAttribute('data-payment-status');
-                const transactionDate = this.getAttribute('data-transaction-date');
-                
-                const transactionCategory = this.getAttribute('data-transaction-category');
-                const amount = this.getAttribute('data-amount');
+                  // Fetch data attributes
+                  const paymentStatus = this.getAttribute('data-payment-status');
+                  const transactionDate = this.getAttribute('data-transaction-date');
+                  
+                  const transactionCategory = this.getAttribute('data-transaction-category');
+                  const amount = this.getAttribute('data-amount');
+                  const description = this.getAttribute('data-description');
 
-                // Update modal content
-                modalPaymentStatus.textContent = paymentStatus;
-                modalTransactionDate.textContent = transactionDate;
-                
-                modalTransactionCategory.textContent = transactionCategory;
-                modalAmount.textContent = '$' + amount;
-            });
-        });
-    });
-</script>
+                  // Update modal content
+                  modalPaymentStatus.textContent = paymentStatus;
+                  modalTransactionDate.textContent = transactionDate;
+                  
+                  modalTransactionCategory.textContent = transactionCategory.replace(/_/g, ' ');
+                  modalAmount.textContent = '$' + amount;
+                  modalDescription.textContent = description;
+              });
+          });
+      });
+  </script>
 </body>
-
 </html>

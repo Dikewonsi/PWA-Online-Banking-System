@@ -14,6 +14,7 @@
     $rep_bank_name = isset($_SESSION['rep_bank_name']) ? $_SESSION['rep_bank_name'] : '';
     $amount = $_SESSION['transfer_amount'];
     $remark = $_SESSION['remark'];
+    $category = 'Bank_Transfer';
 
     try {
         // Start transaction
@@ -65,11 +66,12 @@
         }
 
         // Insert transaction record for sender
-        $stmt = $pdo->prepare("INSERT INTO transactions (user_id, account_id, type, amount, description) VALUES (:userid, :account_id, 'transfer', :amount, :remark)");        
+        $stmt = $pdo->prepare("INSERT INTO transactions (user_id, account_id, type, amount, description, category) VALUES (:userid, :account_id, 'transfer', :amount, :remark, :category)");        
         $stmt->bindParam(':userid', $userid, PDO::PARAM_INT);
         $stmt->bindParam(':account_id', $senderAccountId, PDO::PARAM_INT);
         $stmt->bindParam(':amount', $amount, PDO::PARAM_STR);
         $stmt->bindParam(':remark', $remark, PDO::PARAM_STR);
+        $stmt->bindParam(':category', $category, PDO::PARAM_STR);
         $stmt->execute();
 
         // Insert transaction record for recipient (intra-bank only)
@@ -78,6 +80,7 @@
             $stmt->bindParam(':account_id', $recipientAccountId, PDO::PARAM_INT);
             $stmt->bindParam(':amount', $amount, PDO::PARAM_STR);
             $stmt->bindParam(':remark', $remark, PDO::PARAM_STR);
+            $stmt->bindParam(':category', $category, PDO::PARAM_STR);            
             $stmt->bindParam(':acc_num', $rep_acc_num, PDO::PARAM_STR);
             $stmt->execute();
         }
