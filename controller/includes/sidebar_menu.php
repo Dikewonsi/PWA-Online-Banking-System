@@ -35,6 +35,12 @@
                                     </li>
 
                                     <li>
+                                        <a href="upload_profile_pic.php">
+                                            <span data-key="t-chat">Upload Profile Picture</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
                                         <a href="activate_users.php">
                                             <span data-key="t-chat">Activate Users</span>
                                         </a>

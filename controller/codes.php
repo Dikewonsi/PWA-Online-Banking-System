@@ -165,6 +165,7 @@
     } 
     else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_user_card_balance']))
     {
+        $account_id = $_POST['account_id']; // Selected account ID
         // Validate the inputs
         if (is_numeric($amount) && $amount > 0)
         {
