@@ -164,7 +164,7 @@
         </li>
 
         <li>
-          <a href="help.html" class="profile-box">
+          <a href="faq.php" class="profile-box">
             <div class="profile-img">
               <i class="icon" data-feather="help-circle"></i>
             </div>
@@ -175,7 +175,7 @@
           </a>
         </li>
         <li>
-          <a href="signin.html" class="profile-box">
+          <a href="logout.php" class="profile-box">
             <div class="profile-img">
               <i class="icon" data-feather="log-out"></i>
             </div>

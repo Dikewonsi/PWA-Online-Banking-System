@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         try {
             $stmt = $pdo->prepare($sql);
             $stmt->execute($params);
-            header("Location: ../my-account.php?update=success");
+            header("Location: my-account.php?update=success");
             exit();
         } catch (PDOException $e) {
             error_log("Update failed: " . $e->getMessage(), 0);

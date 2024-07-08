@@ -53,7 +53,7 @@
   <form class="auth-form" target="_blank">
     <div class="custom-container">
       <div class="form-group">
-        <h5>It usually takes 1 hour to approve your registration, we will send you an email when your account has been approved for login.</h5>
+        <h5 align="center">It usually takes 1 hour to approve your registration, we will send you an email when your account has been approved for login.</h5>
         <div class="successfull-img text-center">
           <img class="img-fluid img" src="assets/images/authentication/5.svg" alt="v1" />
         </div>

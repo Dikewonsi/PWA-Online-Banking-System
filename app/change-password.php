@@ -12,19 +12,25 @@
 
     $errorModal = false;
 
-    try
+    //Collect Form Details
+    if($_SERVER['REQUEST_METHOD'] == "POST")
     {
-      $stmt = $pdo->prepare("SELECT * FROM users WHERE user_id = :userid");
-      $stmt->bindParam(':userid', $userid, PDO::PARAM_INT);
-      $stmt->execute();
-      
-      while ($rows = $stmt->fetch(PDO::FETCH_ASSOC))
+      $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+
+      // Check if the email already exists
+      $stmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE email = ?");
+      $stmt->execute([$email]);
+      $emailExists = $stmt->fetchColumn();
+
+      if ($emailExists)
       {          
-          $fname = $rows['fullname'];
+          header("Location: change-new-password.php");
+          exit();
       }
-    } catch (PDOException $e) {
-        error_log("Query failed: " . $e->getMessage(), 0);
-        // Handle the error appropriately here, e.g., display an error message to the user
+      else
+      {
+        $errorModal = true;
+      }
     }
 ?>
 <!DOCTYPE html>
@@ -84,7 +90,7 @@
       <h4 class="fw-normal light-text lh-base">
         Enter your registered email to change your PIN.
       </h4>
-      <form class="auth-form pt-0 mt-3" action="helpers/send-verification.php" method="POST">
+      <form class="auth-form pt-0 mt-3" action="" method="POST">
         <div class="form-group">
             <label for="inputContact" class="form-label">Email Address</label>
             <input type="text" class="form-control" id="inputContact" name="email" placeholder="Enter your email" required>
@@ -137,7 +143,7 @@
           $('#errorModal').modal('show');
       }
   <?php endif; ?>     
-  </script>
+  </script>  
 </body>
 
 </html>
