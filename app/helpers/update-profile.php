@@ -46,23 +46,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $params[':marital_status'] = $_POST['marital_status'];
     }
 
+    // Handle profile picture upload
+    if (isset($_FILES['profile_pic']) && $_FILES['profile_pic']['error'] == UPLOAD_ERR_OK) {
+        $target_dir = "uploads/profile_pics/";
+        $target_file = $target_dir . basename($_FILES['profile_pic']['name']);
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        $allowed_types = ['jpg', 'jpeg', 'png', 'gif'];
+
+        if (in_array($imageFileType, $allowed_types)) {
+            if (move_uploaded_file($_FILES['profile_pic']['tmp_name'], $target_file)) {
+                $fieldsToUpdate[] = "profile_pic = :profile_pic";
+                $params[':profile_pic'] = $target_file;
+            }
+        }
+    }
+
     if (!empty($fieldsToUpdate)) {
         $sql = "UPDATE users SET " . implode(", ", $fieldsToUpdate) . " WHERE user_id = :userid";
         try {
             $stmt = $pdo->prepare($sql);
             $stmt->execute($params);
-            header("Location: my-account.php?update=success");
+            header("Location: ../my-account.php?update=success");
             exit();
         } catch (PDOException $e) {
             error_log("Update failed: " . $e->getMessage(), 0);
             echo "An error occurred. Please try again later.";
         }
     } else {
-        header("Location: profile.php?update=none");
+        header("Location: ../profile.php?update=none");
         exit();
     }
 } else {
-    header("Location: profile.php");
+    header("Location: ../profile.php");
     exit();
 }
 ?>

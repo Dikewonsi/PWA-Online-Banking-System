@@ -152,7 +152,7 @@
           </a>
         </li>
         <li>
-          <a href="setting.html" class="profile-box">
+          <a href="settings.php" class="profile-box">
             <div class="profile-img">
               <i class="icon" data-feather="lock"></i>
             </div>

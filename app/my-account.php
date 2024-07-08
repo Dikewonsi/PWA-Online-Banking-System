@@ -27,6 +27,7 @@
             $employment = $rows['employment'];
             $citizenship = $rows['citizenship'];
             $marital_status = $rows['marital_status'];
+            $profile_pic = $rows['profile_pic'];
         }
     } catch (PDOException $e) {
         error_log("Query failed: " . $e->getMessage(), 0);
@@ -83,7 +84,7 @@
             <div class="profile-section">
                 <div class="profile-banner">
                     <div class="profile-image">
-                        <img class="img-fluid profile-pic" src="assets/images/person/default.png" alt="Profile Picture">
+                        <img class="img-fluid profile-pic" src="helpers/<?php echo $profile_pic; ?>" alt="Profile Picture">                                                                        
                     </div>
                 </div>
                 <h2><?php echo htmlspecialchars($fname); ?></h2>
@@ -108,7 +109,11 @@
             </div>
             <br>             
 
-            <form class="auth-form pt-0 mt-3" action="helpers/update-profile.php" method="POST">
+            <form class="auth-form pt-0 mt-3" action="helpers/update-profile.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="dob" class="form-label">Profile Picture</label>
+                    <input type="file"  class="form-control" id="profile_pic" name="profile_pic" accept="image/*">
+                </div>
                 <div class="form-group">
                     <label for="dob" class="form-label">Full Name</label>
                     <input type="text" class="form-control" id="fullname" name="fullname" disabled value="<?php echo htmlspecialchars($fname); ?>">
