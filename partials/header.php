@@ -83,7 +83,7 @@
                                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Learn
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="good_business.php" class="dropdown-item"><span>Capital Vista Good Business</span></a></li>
+                                            <li><a href="good_business.php" class="dropdown-item"><span>Capital Ventures Good Business</span></a></li>
                                             <li><a href="shop-details.html" class="dropdown-item"><span>Treasury Services </span></a></li>
                                             <li><a href="cart.html" class="dropdown-item"><span>Consumer News </span></a></li>
 
@@ -103,7 +103,7 @@
                                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">About
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="about.php" class="dropdown-item"><span>Capital Vista</span></a></li>
+                                            <li><a href="about.php" class="dropdown-item"><span>Capital Ventures</span></a></li>
                                             <li><a href="blog-v1.html" class="dropdown-item"><span>Our Story </span></a></li>
                                             <li><a href="blog-v2.html" class="dropdown-item"><span>Our Team</span></a></li>
 

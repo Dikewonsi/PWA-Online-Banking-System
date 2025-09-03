@@ -75,7 +75,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="title-one text-center text-md-start mb-30 sm-mb-10">
-                        <h2>More than Capital Vista accounts </h2>
+                        <h2>More than Capital Ventures accounts </h2>
                     </div>
                     <!-- /.title-one -->
                 </div>
@@ -267,7 +267,7 @@
                     <div class="title-one">
                         <h3>More checking, more savings, less ATM fees —
                             <br>
-                           <p class="text-success">that’s how you get more with Capital Vista Bank.</p> </h3>
+                           <p class="text-success">that’s how you get more with Capital Ventures Bank.</p> </h3>
                     </div>
                     <!-- /.title-one -->
                     <p class="text-lg mt-40 lg-mt-30 mb-30">Contact our friendly team for quick and helpful answers.</p>

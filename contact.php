@@ -28,7 +28,7 @@
                 <div class="card-style-two vstack tran3s w-100 mt-30">
                     <img src="images/lazy.svg" data-src="images/icon/icon_06.svg" alt="" class="lazy-img icon me-auto">
                     <h3 class="fw-bold mt-30 mb-25">Stolen Debit Card:</h3>
-                    <p>If your Capital Vista Bank-issued debit or ATM card is lost or stolen during any of these times, or if you suspect card fraud while our offices are closed, please call 855-775-8400 for immediate assistance.</p>
+                    <p>If your Capital Ventures Bank-issued debit or ATM card is lost or stolen during any of these times, or if you suspect card fraud while our offices are closed, please call 855-775-8400 for immediate assistance.</p>
                     <p class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></p>
                 </div>
                 <!-- /.card-style-two -->

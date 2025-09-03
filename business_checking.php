@@ -7,7 +7,7 @@
     <div class="container position-relative">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <h1 class="text-white d-inline-block position-relative me-xxl-4 me-lg-5">Capital Vistay Business Checking</h1>
+                <h1 class="text-white d-inline-block position-relative me-xxl-4 me-lg-5">Capital Venturesy Business Checking</h1>
             </div>
             <div class="col-xl-4 col-lg-5 ms-auto">
                 <p class="text-white text-lg mb-70 lg-mb-40">Banking built for business.</p>
@@ -55,7 +55,7 @@
                         Less complicated.
                     </h3>
                     <!-- /.title-one -->
-                    <p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-20">Your business checking account doesn't have to be complicated to be good. This Capital Vista business account does what you need without asking too much of your time. </p>
+                    <p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-20">Your business checking account doesn't have to be complicated to be good. This Capital Ventures business account does what you need without asking too much of your time. </p>
                     <div class="d-inline-flex flex-wrap align-items-center">
                         <p class="btn-four mt-15 me-4">$50 to open</p>
                         <p class="btn-three icon-link mt-15">

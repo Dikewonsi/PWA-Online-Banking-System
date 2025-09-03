@@ -1,9 +1,8 @@
 <?php
 
-    $dsn = 'mysql:host=localhost;dbname=capitalvista';
-    $username = 'root';
-    $password = '';
-    
+    $dsn = 'mysql:host=localhost;dbname=db_name';
+    $username = 'db_user';
+    $password = 'db_password';
 
     /* Attempt to connect to MySQL database */
     try {

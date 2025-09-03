@@ -41,10 +41,10 @@
             <table class="table table-bordered border-success table-striped ">
                 <thead class="table-success">
                     <tr class="text-center ">
-                        <th >Capital Vista Free Checking</th>
-                        <th>Capital Vista Direct Interest Checking</th>
-                        <th >Capital Vista 50+ Interest Checking</th>
-                        <th>Capital Vista High Interest Checking </th>
+                        <th >Capital Ventures Free Checking</th>
+                        <th>Capital Ventures Direct Interest Checking</th>
+                        <th >Capital Ventures 50+ Interest Checking</th>
+                        <th>Capital Ventures High Interest Checking </th>
                     </tr>
                 </thead>
                 <tbody>

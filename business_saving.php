@@ -7,7 +7,7 @@
     <div class="container position-relative">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <h1 class="text-white d-inline-block position-relative me-xxl-4 me-lg-5">Capital Vista Business Saving</h1>
+                <h1 class="text-white d-inline-block position-relative me-xxl-4 me-lg-5">Capital Ventures Business Saving</h1>
             </div>
             <div class="col-xl-4 col-lg-5 ms-auto">
                 <p class="text-white text-lg mb-70 lg-mb-40">Savings built for business needs.</p>

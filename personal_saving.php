@@ -7,7 +7,7 @@
     <div class="container position-relative">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <h1 class="text-white d-inline-block position-relative me-xxl-4 me-lg-5">Capital Vista Savings</h1>
+                <h1 class="text-white d-inline-block position-relative me-xxl-4 me-lg-5">Capital Ventures Savings</h1>
             </div>
             <div class="col-xl-4 col-lg-5 ms-auto">
                 <p class="text-white text-lg mb-70 lg-mb-40">The first step on your savings journey.</p>
@@ -52,7 +52,7 @@
             <div class="row align-items-center">
                 <div class="col-xl-7 col-lg-8 wow fadeInLeft">
                     <h3>
-                        More saving, Capital Vista.
+                        More saving, Capital Ventures.
                     </h3>
                     <!-- /.title-one -->
                     <p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-20">Putting back and planning ahead starts here <br>

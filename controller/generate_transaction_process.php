@@ -2,9 +2,9 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Adjust your database credentials accordingly
     $host = 'localhost';
-    $dbname = 'capitalvista';
-    $username = 'root';
-    $password = '';
+    $dbname = 'db_name';
+    $username = 'db_user';
+    $password = 'db_password';
 
     $user_id = $_POST['user_id'];       // Selected user ID
     $account_id = $_POST['account_id']; // Selected account ID

@@ -1,9 +1,9 @@
 <?php
 // Adjust your database credentials accordingly
 $host = 'localhost';
-$dbname = 'capitalvista';
-$username = 'root';
-$password = '';
+$dbname = 'db_name';
+$username = 'db_user';
+$password = 'db_password';
 
 $user_id = 11;       // Replace with the desired user_id
 $account_id = 5;    // Replace with the desired account_id

@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
-$dbname = 'capitalvista';
-$username = 'root';
-$password = '';
+$dbname = 'db_name';
+$username = 'db_user';
+$password = 'db_password';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

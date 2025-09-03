@@ -7,7 +7,7 @@
     <div class="container position-relative">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <h1 class="text-white d-inline-block position-relative me-xxl-4 me-lg-5">Capital Vista Good Business</h1>
+                <h1 class="text-white d-inline-block position-relative me-xxl-4 me-lg-5">Capital Ventures Good Business</h1>
             </div>
             <div class="col-xl-4 col-lg-5 ms-auto">
                 <p class="text-white text-lg mb-70 lg-mb-40">Your success is our business..</p>
@@ -94,7 +94,7 @@
                     </div>
                     <!-- /.title-one -->
                     <p class="text-lg mt-10 lg-mt-30 mb-35 lg-mb-20">You're busy. Whether it's your business, your board assignments or the after-school basketball practices, sometimes you have to create time to make banking decisions. That's why our business banking products and team are designed to work with you -- whenever you need us. </p>
-                    <p class="btn-four mt-15 mb-15-4 text-center w-50">"Capital Vista Bank is a partner"</p>
+                    <p class="btn-four mt-15 mb-15-4 text-center w-50">"Capital Ventures Bank is a partner"</p>
 
                 </div>
 
@@ -144,7 +144,7 @@
                     </div>
                     <!-- /.title-one -->
                     <p class="text-lg mt-10 lg-mt-30 mb-35 lg-mb-20">Your days don't end at 5 p.m., and you aren't always up on the latest shows. Running a business means you're up earlier and working later than most, and we're here to cheer you on along the way. Founded by entrepreneurs, we do business like a business because you deserve a financial partner who understands what it's like to walk in your shoes.</p>
-                    <p class="btn-four mt-15 mb-15-4 text-center w-50">#Capital Vista GoodBusiness Series</p>
+                    <p class="btn-four mt-15 mb-15-4 text-center w-50">#Capital Ventures GoodBusiness Series</p>
 
                 </div>
             </div>

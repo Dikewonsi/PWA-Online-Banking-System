@@ -28,7 +28,7 @@
                     <hr class="border">
 
                     <p class="text-md mt-50 mb-10 text-success">What to do if your debit or credit card is lost or stolen:  </p>
-                    <p class="text-md  mb-20 lg-mb-20">If your Capital Vista Bank-issued debit or ATM card is lost or stolen, or if you suspect card fraud while our offices are closed, <a href="contact.php" class="fw-bold">Contact us</a>.</p>
+                    <p class="text-md  mb-20 lg-mb-20">If your Capital Ventures Bank-issued debit or ATM card is lost or stolen, or if you suspect card fraud while our offices are closed, <a href="contact.php" class="fw-bold">Contact us</a>.</p>
                     <p class="text-md  mb-20 ">If your card is lost or you'd like to make a report during normal business hours, call either <a href="contact.php" class="fw-bold">Contact us</a></p>
 
                 </div>

@@ -1,12 +1,12 @@
 {
-    "name": "Capital Vista app",
-    "short_name": "Capital Vista app",
+    "name": "Capital Ventures app",
+    "short_name": "Capital Ventures app",
     "lang": "en-US",
     "start_url": ".",
     "display": "standalone",
     "background_color": "white",
     "theme_color": "#622CFD",
-    "description": "Capital Vista app",
+    "description": "Capital Ventures app",
     "icons": [
         {
             "src": "assets/images/logo/favicon.png",

@@ -56,7 +56,7 @@
                             <li><a href="">Privacy & Terms</a></li>
                             <li><a href="">Contact Us</a></li>
                         </ul>
-                        <div class="copyright me-xl-4 lg-mt-10 order-lg-first">Copyright @2023 Capital Vista inc.</div>
+                        <div class="copyright me-xl-4 lg-mt-10 order-lg-first">Copyright @2023 Capital Ventures inc.</div>
                     </div>
                 </div>
             </div>

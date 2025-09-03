@@ -59,17 +59,17 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['token'])) {
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="CapitalVista" />
-        <meta name="keywords" content="CapitalVista" />
-        <meta name="author" content="CapitalVista" />
+        <meta name="description" content="CapitalVentures" />
+        <meta name="keywords" content="CapitalVentures" />
+        <meta name="author" content="CapitalVentures" />
         <link rel="manifest" href="./manifest.json" />
         <link rel="icon" href="assets/images/logo/favicon.png" type="image/x-icon" />
-        <title>CapitalVista App</title>
+        <title>CapitalVentures App</title>
         <link rel="apple-touch-icon" href="assets/images/logo/favicon.png" />
         <meta name="theme-color" content="#122636" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta name="apple-mobile-web-app-title" content="CapitalVista" />
+        <meta name="apple-mobile-web-app-title" content="CapitalVentures" />
         <meta name="msapplication-TileImage" content="assets/images/logo/favicon.png" />
         <meta name="msapplication-TileColor" content="#FFFFFF" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />

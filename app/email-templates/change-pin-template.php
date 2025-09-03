@@ -14,7 +14,7 @@
 <div class="max-w-md mx-auto bg-white p-6 rounded shadow-lg">
     <!-- Logo and Header -->
     <div class="text-center mb-6" >
-        <img  src="https://capitalvista.net/app/assets/images/logo/logo.png" alt="CapitalVista Logo" class="mx-auto h-12">
+        <img  src="https://companytest.com/app/assets/images/logo/logo.png" alt="CapitalVista Logo" class="mx-auto h-12">
         <h2 class="text-2xl text-gray-800 mt-2">Your OTP for PIN Change</h2>
     </div>
 

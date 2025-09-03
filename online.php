@@ -7,7 +7,7 @@
     <div class="container position-relative">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <h1 class="text-white d-inline-block position-relative me-xxl-4 me-lg-5">Capital Vista Business Saving</h1>
+                <h1 class="text-white d-inline-block position-relative me-xxl-4 me-lg-5">Capital Ventures Business Saving</h1>
             </div>
             <div class="col-xl-4 col-lg-5 ms-auto">
                 <p class="text-white text-lg mb-70 lg-mb-40">Savings built for business needs.</p>
@@ -35,7 +35,7 @@
                     <!-- /.title-one -->
                     <p class="text-lg mt-35 mb-20 lg-mb-20">You're busier than ever - and that's why you need banking tools designed to make managing your money easier than ever, and on your terms. </p>
                     <p class="text-lg  mb-20 lg-mb-20">Whether it's from a school bus seat on your kids' field trip day or from the couch during your favorite new streaming series, online banking is always on and accessible.  </p>
-                    <p class="text-lg  mb-20 lg-mb-20">Plus, it's free with your Capital Vista Bank deposit account. Ready to sign up? Follow the steps below: </p>
+                    <p class="text-lg  mb-20 lg-mb-20">Plus, it's free with your Capital Ventures Bank deposit account. Ready to sign up? Follow the steps below: </p>
                     <hr>
                     <ol>
                         <li class="mb-35">Hit the "Log In" button in the top right of the window.</li>

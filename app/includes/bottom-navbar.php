@@ -3,8 +3,8 @@
           <li>
               <a href="dashboard.php">
                   <div class="icon">
-                      <img class="unactive" src="assets/images/icons/home.png" style="width:20px;" alt="Capital Vista" />
-                      <img class="active" src="assets/images/icons/home-fill.png" style="width:20px;" alt="Capital Vista" />
+                      <img class="unactive" src="assets/images/icons/home.png" style="width:20px;" alt="Capital Ventures" />
+                      <img class="active" src="assets/images/icons/home-fill.png" style="width:20px;" alt="Capital Ventures" />
                   </div>
                   <h5 class="active">Home</h5>
               </a>
